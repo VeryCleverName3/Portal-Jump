@@ -40,8 +40,9 @@
 			<li>(Eg: while holding A and space a portal will be made on the right)</li>
 			<li>Use the mouse to aim and click to shoot</li>
 			<li>Hold the right arrow to skip the tutorial</li>
-			<li>Purple obstacles can be shot, but red obstacles can not.</li>
+			<li>Purple obstacles can be shot, but red obstacles can not</li>
 			<li>New mechanics and checkpoints are unlocked every 50 points</li>
+			<li>Press L to start the game over instantly</li>
             	</ul>
             </p>
         </div>
@@ -94,6 +95,9 @@
             document.addEventListener("keydown", function(e) {
 		if(e.which == 32 || (e.which >= 37 && e.which <= 40)){
                 	e.preventDefault();
+		}
+		if(e.which == 76) {
+			window.location.reload(true);
 		}
                 keyDown[e.which] = true;
             });
