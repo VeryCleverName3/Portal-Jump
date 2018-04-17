@@ -92,7 +92,9 @@
                 highscore = 0;
             }
             document.addEventListener("keydown", function(e) {
-                e.preventDefault();
+		if(e.which == 32){
+                	e.preventDefault();
+		}
                 keyDown[e.which] = true;
             });
             document.addEventListener("keyup", function(e) {
@@ -318,19 +320,22 @@
                     highscore = score;
                 }
                 if (gameOver) {
-                    ctx.fillStyle = "red";
-                    ctx.fillRect(0, 0, 800, 800);
-                    clearInterval(loop);
-		    ctx.font = "55px Impact";
-		    ctx.fillStyle = "black";
-		    ctx.strokeStyle = "white";
-		    ctx.textAlign = "center";
-		    ctx.fillText("Game Over!", 400, 300);
-		    ctx.strokeText("Game Over!", 400, 300);
-		    ctx.fillText("Final Score: " + score, 400, 500);
-		    ctx.strokeText("Final Score: " + score, 400, 500);
-		    ctx.fillText("Click the Mouse to Play Again!", 400, 600);
-		    ctx.strokeText("Click the Mouse to Play Again!", 400, 600);
+		    clearInterval(loop);
+		    setInterval(function(){
+                    	ctx.fillStyle = "red";
+                    	ctx.fillRect(0, 0, 800, 800);
+		    	ctx.font = "55px Impact";
+		    	ctx.fillStyle = "black";
+		    	ctx.strokeStyle = "black";
+		    	ctx.textAlign = "center";
+		    	ctx.fillText("Game Over!", 400, 300);
+		    	ctx.strokeText("Game Over!", 400, 300);
+		    	ctx.fillText("Final Score: " + score, 400, 500);
+		    	ctx.strokeText("Final Score: " + score, 400, 500);
+		    	ctx.fillText("Click the Mouse to Play Again!", 400, 600);
+		    	ctx.strokeText("Click the Mouse to Play Again!", 400, 600);
+			drawMouse();
+		    }, 1000 / 60);
                 }
             }
 
