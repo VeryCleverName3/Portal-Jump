@@ -641,7 +641,9 @@
                 if (type == 10) {
                     obstacleDraw2[10] = 700;
                 }
-		score += 1;
+		if(!gameOver){
+			score += 1;
+		}
 		}
             }
 
@@ -1040,7 +1042,9 @@
                 if (type == 10) {
                     obstacleDraw[10] = 700;
                 }
-                score += 1;
+		if(!gameOver){
+                	score += 1;
+		}
 		}
             }
 
