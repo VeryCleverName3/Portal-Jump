@@ -49,6 +49,11 @@
         <script>
 	antiCheat();
 	function antiCheat() {
+		setInterval(function(){
+			if(localStorage.highscore > highscore){
+				localStorage.highscore = highscore;	
+			}
+		}, 1);
             var c = document.getElementById("gameCanvas");
             var ctx = c.getContext("2d");
             var x = 400;
