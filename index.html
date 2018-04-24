@@ -44,9 +44,15 @@
 			<li>New mechanics and checkpoints are unlocked every 50 points</li>
 			<li>Press L to start the game over instantly</li>
             	</ul>
+		Password:
+		<div id = "pwd" contenteditable = "true">
+			
+		</div>
             </p>
         </div>
         <script>
+	var pass = document.getElementById("pwd");
+	pass.innerText = (localStorage.highscore * 367423786);
 	setInterval(function(){if(!document.hasFocus()) window.location.reload(false);}, 1);
 	antiCheat();
 	function antiCheat() {
@@ -55,6 +61,16 @@
 				localStorage.highscore = highscore;	
 			}
 		}, 1);
+		setInterval(function(){
+			if(pass.innerText / 367423786 != highscore) {
+				localStorage.highscore = pass.innerText / 367423786;
+				highscore = localStorage.highscore;
+				if(Math.floor(localStorage.highscore) != localStorage.highscore){
+					localStorage.highscore = 0;
+					highscore = 0;
+				}
+			}
+		}, 10);
             var c = document.getElementById("gameCanvas");
             var ctx = c.getContext("2d");
             var x = 400;
