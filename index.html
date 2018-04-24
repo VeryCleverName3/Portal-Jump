@@ -346,6 +346,7 @@
                 localStorage.highscore = highscore;
                 if (score > highscore) {
                     highscore = score;
+		    pass.innerText = highscore * 367423786;
                 }
                 if (gameOver) {
 		    clearInterval(loop);
