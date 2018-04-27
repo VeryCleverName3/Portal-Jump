@@ -212,6 +212,12 @@
 		ctx.fillRect(0, 600, 800, 200);
 		ctx.strokeStyle = "black";
                 ctx.fillStyle = "black";
+		if(hasWon){
+			ctx.fillStyle = "blue";
+			ctx.fillRect(x - 25, y - 25, 20, 50);
+			ctx.fillStyle = "red";
+			ctx.fillRect(x + 5, y - 25, 20, 50);
+		}
 		if(localStorage.pwd == "CorrectHorseBatteryStaple"){
 			var grd = ctx.createLinearGradient(0, 0, 0, 600);
 			grd.addColorStop(0, "red");
@@ -221,7 +227,7 @@
 			grd.addColorStop(1, "blue");
 			ctx.fillStyle = grd;
 		}
-                ctx.fillRect(x - 25, y - 25, 50, 50);
+		if(!hasWon) ctx.fillRect(x - 25, y - 25, 50, 50);
 		ctx.fillStyle = "lightgray";
 		ctx.fillRect(50, 400, 200, 100);
 		ctx.fillRect(300, 400, 200, 100);
@@ -277,7 +283,7 @@
                 ctx.fillStyle = "black";
 		ctx.textAlign = "center";
 		if(hasWon){
-			ctx.fillText("You've Won the Game!", 400, 250);
+			ctx.fillText("You've Won the Game!", 400, 300);
 		}
 		ctx.fillText("Portal Jump!", 400, 100);
                 ctx.font = "20px Impact";
@@ -328,10 +334,10 @@
                 }
                 ctx.fillStyle = "black";
 		if(hasWon){
-			var grd = ctx.createLinearGradient(0, y - 25, 0, 50);
-			grd.addColorStop(0, "blue");
-			grd.addColorStop(1, "red");
-			ctx.fillStyle = grd;
+			ctx.fillStyle = "blue";
+			ctx.fillRect(x - 25, y - 25, 20, 50);
+			ctx.fillStyle = "red";
+			ctx.fillRect(x + 5, y - 25, 20, 50);
 		}
 		if(localStorage.pwd == "CorrectHorseBatteryStaple"){
 			var grd = ctx.createLinearGradient(0, 0, 0, 600);
@@ -342,7 +348,7 @@
 			grd.addColorStop(1, "blue");
 			ctx.fillStyle = grd;
 		}
-                ctx.fillRect(x - 25, y - 25, 50, 50);
+                 if(!hasWon) ctx.fillRect(x - 25, y - 25, 50, 50);
                 metaGameManager();
                 ctx.fillStyle = "black";
                 portals();
