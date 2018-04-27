@@ -111,6 +111,10 @@
             var phaseLoop;
             var phaseShiftStarted = false;
             var phase = 1;
+	    var hasWon = false;
+	    if(localStorage.highscore >= 300){
+		hasWon = true;    
+	    }
             for (var i = 0; i <= 3; i++) {
                 stagesStarted[i] = false;
                 stagesStarted2[i] = false;
@@ -272,6 +276,9 @@
                 ctx.font = "55px Impact";
                 ctx.fillStyle = "black";
 		ctx.textAlign = "center";
+		if(hasWon){
+			ctx.fillText("You've Won the Game!", 400, 250);
+		}
 		ctx.fillText("Portal Jump!", 400, 100);
                 ctx.font = "20px Impact";
 		ctx.fillText("By Carter Semrad", 400, 150);
@@ -320,6 +327,12 @@
                     drawObstacles2();
                 }
                 ctx.fillStyle = "black";
+		if(hasWon){
+			var grd = ctx.createLinearGradient(0, y - 25, 0, 50);
+			grd.addColorStop(0, "blue");
+			grd.addColorStop(1, "red");
+			ctx.fillStyle = grd;
+		}
 		if(localStorage.pwd == "CorrectHorseBatteryStaple"){
 			var grd = ctx.createLinearGradient(0, 0, 0, 600);
 			grd.addColorStop(0, "red");
