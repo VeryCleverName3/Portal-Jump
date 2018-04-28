@@ -75,6 +75,8 @@
 			}
 		}, 10);
             var c = document.getElementById("gameCanvas");
+	    var winPlayer = new Image();
+	    winPlayer.src = "winPlayer.png";
             var ctx = c.getContext("2d");
             var x = 400;
             var y = 250;
@@ -213,12 +215,6 @@
 		ctx.strokeStyle = "black";
                 ctx.fillStyle = "black";
 		if(!hasWon){
-			if(hasWon){
-				ctx.fillStyle = "blue";
-				ctx.fillRect(x - 25, y - 25, 20, 50);
-				ctx.fillStyle = "red";
-				ctx.fillRect(x + 5, y - 25, 20, 50);
-			}
 			if(localStorage.pwd == "CorrectHorseBatteryStaple"){
 				var grd = ctx.createLinearGradient(0, 0, 0, 600);
 				grd.addColorStop(0, "red");
@@ -228,7 +224,7 @@
 				grd.addColorStop(1, "blue");
 				ctx.fillStyle = grd;
 			}
-			if(!hasWon) ctx.fillRect(x - 25, y - 25, 50, 50);
+			ctx.fillRect(x - 25, y - 25, 50, 50);
 		}
 		ctx.fillStyle = "lightgray";
 		ctx.fillRect(50, 400, 200, 100);
@@ -336,10 +332,7 @@
                 }
                 ctx.fillStyle = "black";
 		if(hasWon){
-			ctx.fillStyle = "blue";
-			ctx.fillRect(x - 25, y - 25, 20, 50);
-			ctx.fillStyle = "red";
-			ctx.fillRect(x + 5, y - 25, 20, 50);
+			ctx.drawImage(winPlayer, x - 25, y - 25);
 		}
 		if(localStorage.pwd == "CorrectHorseBatteryStaple"){
 			var grd = ctx.createLinearGradient(0, 0, 0, 600);
