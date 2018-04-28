@@ -333,6 +333,7 @@
                 ctx.fillStyle = "black";
 		if(hasWon){
 			ctx.drawImage(winPlayer, x - 25, y - 25);
+			ctx.strokeRect(x - 25, y - 25, 50, 50);
 		}
 		if(localStorage.pwd == "CorrectHorseBatteryStaple"){
 			var grd = ctx.createLinearGradient(0, 0, 0, 600);
