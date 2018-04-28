@@ -332,12 +332,12 @@
                 }
                 ctx.fillStyle = "black";
 		if(hasWon){
-			ctx.fillStyle = "strokeStyle";
+			ctx.fillStyle = ctx.strokeStyle;
 			ctx.drawImage(winPlayer, x - 25, y - 25);
-			ctx.stokeStyle = "black";
+			ctx.strokeStyle = "black";
 			ctx.strokeRect(x - 25, y - 25, 50, 50);
-			ctx.fillRect(x - 4, y - 4, 8, 8);
-			ctx.strokeRect(x - 4, y - 4, 8, 8);
+			ctx.fillRect(x - 5, y - 5, 10, 10);
+			ctx.strokeRect(x - 5, y - 5, 10, 10);
 		}
 		if(localStorage.pwd == "CorrectHorseBatteryStaple"){
 			var grd = ctx.createLinearGradient(0, 0, 0, 600);
