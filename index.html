@@ -114,6 +114,8 @@
             var phaseShiftStarted = false;
             var phase = 1;
 	    var hasWon = false;
+	    var playerImage = new Image();
+	    var playerImage.src = localStorage.playerImage;
 	    if(localStorage.highscore >= 300){
 		hasWon = true;    
 	    }
@@ -339,6 +341,7 @@
 			ctx.fillRect(x - 5, y - 5, 10, 10);
 			ctx.strokeRect(x - 5, y - 5, 10, 10);
 		}
+		ctx.drawImage(playerImage, x - (playerImage.width / 2), y - (playerImage.height / 2));
 		if(localStorage.pwd == "CorrectHorseBatteryStaple"){
 			var grd = ctx.createLinearGradient(0, 0, 0, 600);
 			grd.addColorStop(0, "red");
