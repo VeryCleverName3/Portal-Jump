@@ -351,7 +351,7 @@
 			grd.addColorStop(1, "blue");
 			ctx.fillStyle = grd;
 		}
-                 if(!hasWon) ctx.fillRect(x - 25, y - 25, 50, 50);
+                 if(!hasWon || (playerImage.src == "")) ctx.fillRect(x - 25, y - 25, 50, 50);
                 metaGameManager();
                 ctx.fillStyle = "black";
                 portals();
