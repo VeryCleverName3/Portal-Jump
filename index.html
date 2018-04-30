@@ -334,7 +334,7 @@
                     drawObstacles2();
                 }
                 ctx.fillStyle = "black";
-		if(hasWon){
+		if(hasWon && localStorage.playerImage.length <= 1){
 			ctx.fillStyle = ctx.strokeStyle;
 			ctx.drawImage(winPlayer, x - 25, y - 25);
 			ctx.strokeStyle = "black";
