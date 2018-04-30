@@ -342,7 +342,7 @@
 			ctx.fillRect(x - 5, y - 5, 10, 10);
 			ctx.strokeRect(x - 5, y - 5, 10, 10);
 		}
-		ctx.drawImage(playerImage, x - (playerImage.width / 2), y - (playerImage.height / 2));
+		if(!metaGame) ctx.drawImage(playerImage, x - (playerImage.width / 2), y - (playerImage.height / 2));
 		if(localStorage.pwd == "CorrectHorseBatteryStaple"){
 			var grd = ctx.createLinearGradient(0, 0, 0, 600);
 			grd.addColorStop(0, "red");
@@ -352,7 +352,7 @@
 			grd.addColorStop(1, "blue");
 			ctx.fillStyle = grd;
 		}
-                 if(!hasWon && (localStorage.playerImage.length <= 1)) ctx.fillRect(x - 25, y - 25, 50, 50);
+                if(!hasWon && (localStorage.playerImage.length <= 1)) ctx.fillRect(x - 25, y - 25, 50, 50);
                 metaGameManager();
                 ctx.fillStyle = "black";
                 portals();
