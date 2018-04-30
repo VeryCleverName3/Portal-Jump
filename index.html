@@ -227,7 +227,7 @@
 				grd.addColorStop(1, "blue");
 				ctx.fillStyle = grd;
 			}
-                 if(!hasWon || (localStorage.playerImage.length <= 1)) ctx.fillRect(x - 25, y - 25, 50, 50);
+                 if(!hasWon && (localStorage.playerImage.length <= 1)) ctx.fillRect(x - 25, y - 25, 50, 50);
 		}
 		ctx.fillStyle = "lightgray";
 		ctx.fillRect(50, 400, 200, 100);
@@ -352,7 +352,7 @@
 			grd.addColorStop(1, "blue");
 			ctx.fillStyle = grd;
 		}
-                 if(!hasWon || (localStorage.playerImage.length <= 1)) ctx.fillRect(x - 25, y - 25, 50, 50);
+                 if(!hasWon && (localStorage.playerImage.length <= 1)) ctx.fillRect(x - 25, y - 25, 50, 50);
                 metaGameManager();
                 ctx.fillStyle = "black";
                 portals();
