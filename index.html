@@ -491,20 +491,22 @@
                                 setTimeout(function() {
                                     check();
                                 }, 100);
-                        }, 100);
-                    setTimeout(function() {
-                        x = 800;
-                    }, 50);
-                }
+                            }, 100);
+                        if(!impossible) setTimeout(function() {
+                            x = 800;
+                        }, 50);
+		        if(impossible) x = 800;
+                    }
                 if (portalDirection[3]) {
                     ctx.fillStyle = "red";
                     ctx.fillRect(portalX[3], portalY[3], 10, 100);
                     ctx.fillStyle = "green";
                     ctx.fillRect(790, portalY[3], 10, 100);
                     if ((x >= portalX[3] - 25) && (x <= (portalX[3] + 25)) && (y >= portalY[3]) && (y <= portalY[3] + 100)) {
-                        setTimeout(function() {
-                            x = 800
-                        }, 50);
+                    	if(!impossible) setTimeout(function() {
+                    	    x = 800;
+                    	}, 50);
+		    	if(impossible) x = 800;
                     }
                 }
                 //right portal
@@ -530,9 +532,10 @@
                                     check();
                                 }, 100);
                         }, 100);
-                    setTimeout(function() {
+                    if(!impossible) setTimeout(function() {
                         x = 0;
                     }, 50);
+		    if(impossible) x = 0;
                 }
                 if (portalDirection[4]) {
                     ctx.fillStyle = "green";
@@ -540,9 +543,10 @@
                     ctx.fillStyle = "red";
                     ctx.fillRect(0, portalY[4], 10, 100);
                     if ((x >= portalX[4] - 25) && (x <= (portalX[4] + 25)) && (y >= portalY[4]) && (y <= portalY[4] + 100)) {
-                        setTimeout(function() {
-                            x = 0
-                        }, 50);
+                    	if(!impossible) setTimeout(function() {
+                    	    x = 0;
+                    	}, 50);
+		    	if(impossible) x = 0;
                     }
                 }
             }
