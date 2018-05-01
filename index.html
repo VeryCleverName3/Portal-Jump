@@ -116,7 +116,11 @@
 	    if (typeof(localStorage.playerImage) == "undefined") localStorage.playerImage = "";
 	    var hasWon = false;
 	    var playerImage = new Image();
-	    playerImage.src = localStorage.playerImage;
+	    playerImage.src = "" + localStorage.playerImage;
+	    if(playerImage.src.length >= 20){
+		playerImage.height = 50;
+		playerImage.width = 50;
+	    }
 	    if(localStorage.highscore >= 300){
 		hasWon = true;    
 	    }
