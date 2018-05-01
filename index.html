@@ -116,10 +116,8 @@
 	    var hasWon = false;
 	    var playerImage = new Image();
 	    playerImage.src = localStorage.playerImage;
-	    if(playerImage.src == undefined){
-		    localStorage.playerImage = "";
-		    playerImage.src = "";
-	    }
+	    localStorage.playerImage = "";
+	    playerImage.src = "";
 	    if(localStorage.highscore >= 300){
 		hasWon = true;    
 	    }
