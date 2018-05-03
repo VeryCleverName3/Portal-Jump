@@ -18,8 +18,12 @@
 				margin: 50px;
 			}
 			#skins {
-				display: flex;
+				display: block;
 			}
+			#skinBox{
+		   		border-style: solid;
+		    		color: black;
+	    		}
 		</style>
 	</head>
 	<body>
@@ -27,7 +31,11 @@
 		<h1>Instructions for using skins in Portal Jump</h1>
 		If you see a skin you like, copy the key and paste it into the skin select box. <br>
 		If you want, you can use an image address online to use a custom skin.
-		Reload for it to take effect after changing character.
+		<h2>Skin Select Box</h2>
+		<br>
+		<div id = "skinBox" contenteditable = "true">
+			
+		</div>
 		<div id = "skins">
 			<figure>
 				<img src = "pigDevil.png">
@@ -58,5 +66,10 @@
 				<figcaption>Submitted by Quinn<br>key: wizard.png</figcaption>
 			</figure>
 		</div>
+		<script>
+			var skinBox = document.getElementById("skinBox");
+			skinBox.innerText = "" + localStorage.playerImage;
+			setInterval(function(){localStorage.playerImage = skinBox.innerText}, 1);
+		</script>
 	</body>
 </html>
