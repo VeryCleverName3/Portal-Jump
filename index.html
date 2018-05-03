@@ -26,9 +26,6 @@
                 margin-left: 100;
                 margin-right: 100;
             }
-	    #pwd {
-		   background-color: black; 
-	    }
 	    a {
       	    	border-style: solid;
 		text-decoration: none;
@@ -52,17 +49,12 @@
 			<li>New mechanics and checkpoints are unlocked every 50 points</li>
 			<li>Press L to start the game over instantly</li>
             	</ul>
-		Save Code:
-		<div id = "pwd" contenteditable = "true">
-			
-		</div>
+		<a href = "SaveCodePage.html">Save Code</a>
 		<br>
 		<a href = "https://veryclevername3.github.io/Portal-Jump/PlayerSheet.html">Skin Select</a>
             </p>
         </div>
         <script>
-	var pass = document.getElementById("pwd");
-	pass.innerText = (localStorage.highscore * 367423786);
 	setInterval(function(){if(!document.hasFocus()) window.location.reload(false);}, 1);
 	antiCheat();
 	function antiCheat() {
@@ -71,16 +63,6 @@
 				localStorage.highscore = highscore;	
 			}
 		}, 1);
-		setInterval(function(){
-			if(pass.innerText / 367423786 != highscore) {
-				localStorage.highscore = pass.innerText / 367423786;
-				highscore = localStorage.highscore;
-				if(Math.floor(localStorage.highscore) != localStorage.highscore){
-					localStorage.highscore = 0;
-					highscore = 0;
-				}
-			}
-		}, 10);
             var c = document.getElementById("gameCanvas");
 	    var winPlayer = new Image();
 	    winPlayer.src = "winPlayer.png";
