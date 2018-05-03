@@ -1,3 +1,40 @@
 <html>
-	
+	<head>
+		<style>
+			body {
+				margin: 100px;
+				display: flex;
+				font-family: "Impact";
+				font-size: 20px;
+				text-align: center;
+			}
+			#pwd {
+				border-style: solid;
+				width: 30%;
+				margin: auto;
+			}
+			a {
+				border-style: solid;
+				text-decoration: none;
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<a href = "index.html">Back</a>
+		<h1>Instructions for Save Code</h1>
+		The Save Code is a way you can take your game progress to another computer. To do so, copy and paste the code in the box below into the box on the computer you wish to bring your progress to. Don't try to cheat with it though- if you put in an invalid save code all of your progress will be deleted.
+		<h2>Save Code Box</h2>
+		<div id = "pwd" contenteditable = "true">
+			
+		</div>
+		<script>
+			var pass = document.getElementById("pwd");
+			pass.innerText = (localStorage.highscore * 367423786);
+			setInterval(function(){
+				localStorage.highscore = pass.innerText / 367423786;
+				if(localStorage.highscore != Math.floor(localStorage.highscore)) localStorage.highscore = 0;
+			}, 1);
+		</script>
+	</body>
 </html>
