@@ -29,10 +29,6 @@
 	    #pwd {
 		   background-color: black; 
 	    }
-	    #skinBox{
-		    border-style: solid;
-		    color: black;
-	    }
 	    a {
       	    	border-style: solid;
 		text-decoration: none;
@@ -61,14 +57,7 @@
 			
 		</div>
 		<br>
-		<a href = "https://veryclevername3.github.io/Portal-Jump/PlayerSheet.html">Skin List/Instructions</a>
-		<br>
-		<br>
-		Skin Select Box
-		<br>
-		<div id = "skinBox" contenteditable = "true">
-			
-		</div>
+		<a href = "https://veryclevername3.github.io/Portal-Jump/PlayerSheet.html">Skin Select</a>
             </p>
         </div>
         <script>
@@ -92,7 +81,6 @@
 				}
 			}
 		}, 10);
-	    var skinBox = document.getElementById("skinBox");
             var c = document.getElementById("gameCanvas");
 	    var winPlayer = new Image();
 	    winPlayer.src = "winPlayer.png";
@@ -136,8 +124,6 @@
 	    var hasWon = false;
 	    var playerImage = new Image();
 	    playerImage.src = "" + localStorage.playerImage;
-	    skinBox.innerText = localStorage.playerImage;
-	    setInterval(function(){localStorage.playerImage = skinBox.innerText}, 10);
 	    if(localStorage.playerImage.length >= 20){
 		playerImage.height = 50;
 		playerImage.width = 50;
