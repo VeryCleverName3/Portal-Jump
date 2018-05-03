@@ -384,6 +384,7 @@
                 portals();
                 ctx.fillStyle = "black";
                 ctx.fillRect(0, 625, 800, 175);
+		if(localStorage.playerImage == "wizard.png" && !metaGame) ctx.drawImage(playerImage, x - (playerImage.width / 2), y - (playerImage.height / 2), playerImage.width, playerImage.height);
                 if (portalDirection[1]) {
                     ctx.fillStyle = "blue";
                     ctx.fillRect(portalX[1], portalY[1], 100, 10);
