@@ -1600,22 +1600,33 @@
                 }
             }
             function phaseManager() {
-                if (phaseShift) {
-                    if (!phaseShiftStarted) {
-                        phaseShiftStarted = true;
-                        phaseLoop = setInterval(function() {
-                            if (phase == 1) {
-                                phase = 2;
-                            } else if (phase == 2) {
-                                phase = 1;
-                            }
-                        }, 1000);
-                    }
-                } else {
-                    phaseShiftStarted = false;
-                    clearInterval(phaseLoop);
-		    phase = 1;
-                }
+                //if (phaseShift) {
+                //    if (!phaseShiftStarted) {
+                 //       phaseShiftStarted = true;
+                 //       phaseLoop = setInterval(function() {
+                 //           if (phase == 1) {
+                 //               phase = 2;
+                 //           } else if (phase == 2) {
+                 //               phase = 1;
+                 //           }
+                 //       }, 1000);
+                 //   }
+                //} else {
+                  //  phaseShiftStarted = false;
+                   // clearInterval(phaseLoop);
+		   // phase = 1;
+              //  }
+		if(phaseShift){
+		    if(portalDirection[1] || portalDirection[2] || portalDirection[3] || portalDirection[4]){
+			    if(!phaseShiftStarted){
+			    	phaseShiftStarted = true;
+			    	if(phase == 1){
+					phase = 2;
+				} else phase = 1;
+			    	
+			    }
+		    } else phaseShiftStarted = false;
+		}
             }
 	}
         </script>
