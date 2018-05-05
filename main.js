@@ -90,6 +90,12 @@ antiCheat();
 	    ontouchmove = function(e) {
                 mouseX = e.clientX;
                 mouseY = e.clientY;
+		if(e.clientX >= 250 && e.clientX <= 400){
+			keyDown[68] = true;
+		} else keyDown[68] = false;
+		if(e.clientX <= 150){
+			keyDown[65] = true;
+		} else keyDown[65] = false;
             }
             document.addEventListener("mousedown", function(e) {
                 mouseDown[e.which] = true;
