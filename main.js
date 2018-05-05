@@ -89,24 +89,18 @@ antiCheat();
             }
 	    ontouchmove = function(e) {
 		for(var i = 0; i <= 3; i++){
-                	mouseX = e.touches[i].clientX;
-                	mouseY = e.touches[i].clientY;
 			if(e.touches[i].clientX >= 250 && e.touches[i].clientX <= 400 && e.touches[i].clientY >= 800){
 				keyDown[68] = true;
-				mouseX = x + 50;
-				mouseY = y;
 			} else keyDown[68] = false;
 			if(e.touches[i].clientX <= 150 && e.touches[i].clientY >= 800){
 				keyDown[65] = true;
-				mouseX = x - 50;
-				mouseY = y;
 			} else keyDown[65] = false;
-			if(e.touches[i].clientY <= 1025 && e.touches[i].clientY >= 800){
+			if(e.touches[i].clientY <= 1025 && e.touches[i].clientY >= 800 && e.touches[i].clientX <= 400){
 				keyDown[87] = true;
 			} else keyDown[87] = false;
-			if(e.touches[i].clientY <= 1025 && e.touches[i].clientY >= 800){
-				keyDown[87] = true;
-			} else keyDown[87] = false;
+			if(e.touches[i].clientY >= 1125 && e.touches[i].clientX <= 400){
+				keyDown[83] = true;
+			} else keyDown[83] = false;
 		}
             }
             document.addEventListener("mousedown", function(e) {
@@ -170,7 +164,7 @@ antiCheat();
                         clearInterval(startMenu);
                         gameStarted = true;
                     }
-		    if(mouseX >= 300 && mouseX <= 500 && mouseY >= 700) {
+		    if(mouseX >= 300 && mouseX <= 500 && mouseY >= 700 && highscore >= 300) {
 			score = 300;
                         loop = setInterval(function() {
                             draw();
@@ -242,7 +236,7 @@ antiCheat();
                         clearInterval(startMenu);
                         gameStarted = true;
                     }
-		    if(mouseX >= 300 && mouseX <= 500 && mouseY >= 700) {
+		    if(mouseX >= 300 && mouseX <= 500 && mouseY >= 700 && highscore >= 300) {
 			score = 300;
                         loop = setInterval(function() {
                             draw();
@@ -369,11 +363,19 @@ antiCheat();
                     x -= 5;
                     if (impossible)
                         x -= 5;
+		    if(screen.width <= 699) {
+			    mouseX = x - 50;
+			    mouseY = y;
+		    }
                 }
                 if (keyDown[68] && x < 775) {
                     x += 5;
                     if (impossible)
                         x += 5;
+		    if(screen.width <= 699){
+			    mouseX = x + 50;
+			    mouseY = y;
+		    }
                 }
                 if (keyDown[87] && onGround() && !antiGrav) {
                     velocityY = 15;
