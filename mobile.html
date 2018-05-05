@@ -39,6 +39,9 @@
 		var ctx = c.getContext("2d");
 		ctx.fillStyle = "pink";
 		ctx.fillRect(0, 0, 800, 550);
+		ontouchmove = function(e){
+			e.preventDefault();
+		}
 	</script>
         <script src = "main.js"></script>
     </body>
