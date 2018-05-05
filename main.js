@@ -190,6 +190,8 @@ antiCheat();
 				mouseDown[1] = false;
 			}
 		}
+		mouseX = e.touches[0].clientX;
+                mouseY = e.touches[0].clientY;
 		if(gameOver){
 			window.location.reload(true);
 		}
