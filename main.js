@@ -87,6 +87,10 @@ antiCheat();
                 mouseX = e.clientX;
                 mouseY = e.clientY;
             }
+	    ontouchmove = function(e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            }
             document.addEventListener("mousedown", function(e) {
                 mouseDown[e.which] = true;
 		if(gameOver){
@@ -159,9 +163,86 @@ antiCheat();
 		    }
                 }
             });
+	    ontouchstart = function(e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+		mouseDown[e.which] = true;
+		if(gameOver){
+			window.location.reload(true);
+		}
+                if (!gameStarted) {
+                    if (mouseX >= 50 && mouseX <= 250 && mouseY >= 400 && mouseY <= 500) {
+                        loop = setInterval(function() {
+                            draw();
+                        }, 1000 / 60);
+                        obstacleManager();
+                        clearInterval(startMenu);
+                        gameStarted = true;
+                    }
+                    if (mouseX >= 300 && mouseX <= 500 && mouseY >= 400 && mouseY <= 500 && highscore >= 50) {
+                        score = 50;
+                        loop = setInterval(function() {
+                            draw();
+                        }, 1000 / 60);
+                        obstacleManager();
+                        clearInterval(startMenu);
+                        gameStarted = true;
+                    }
+                    if (mouseX >= 550 && mouseX <= 750 && mouseY >= 400 && mouseY <= 500 && highscore >= 100) {
+                        score = 100;
+                        loop = setInterval(function() {
+                            draw();
+                        }, 1000 / 60);
+                        obstacleManager();
+                        clearInterval(startMenu);
+                        gameStarted = true;
+                    }
+                    if (mouseX >= 50 && mouseX <= 250 && mouseY >= 550 && mouseY <= 650 && highscore >= 150) {
+                        score = 150;
+                        loop = setInterval(function() {
+                            draw();
+                        }, 1000 / 60);
+                        obstacleManager();
+                        clearInterval(startMenu);
+                        gameStarted = true;
+                    }
+                    if (mouseX >= 300 && mouseX <= 500 && mouseY >= 550 && mouseY <= 650 && highscore >= 200) {
+                        score = 200;
+			phaseShift = true;
+			phaseManager();
+                        loop = setInterval(function() {
+                            draw();
+                        }, 1000 / 60);
+                        obstacleManager();
+                        clearInterval(startMenu);
+                        gameStarted = true;
+                    }
+                    if (mouseX >= 550 && mouseX <= 750 && mouseY >= 550 && mouseY <= 650 && highscore >= 250) {
+                        score = 250;
+                        loop = setInterval(function() {
+                            draw();
+                        }, 1000 / 60);
+                        obstacleManager();
+                        clearInterval(startMenu);
+                        gameStarted = true;
+                    }
+		    if(mouseX >= 300 && mouseX <= 500 && mouseY >= 700) {
+			score = 300;
+                        loop = setInterval(function() {
+                            draw();
+                        }, 1000 / 60);
+                        obstacleManager();
+                        clearInterval(startMenu);
+                        gameStarted = true;  
+		    }
+                }
+	    }
             document.addEventListener("mouseup", function(e) {
                 mouseDown[e.which] = false;
             });
+	    ontouchend = function(e) {
+                mouseDown[e.which] = false;
+            }
             var startMenu = setInterval(function() {
 		ctx.fillStyle = "white";
 		ctx.fillRect(0, 0, 800, 800);
