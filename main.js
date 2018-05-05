@@ -88,6 +88,8 @@ antiCheat();
                 mouseY = e.clientY;
             }
 	    ontouchmove = function(e) {
+		mouseX = e.touches[0].clientX;
+		mouseX = e.touches[0].clientX;
 		for(var i = 0; i < e.touches.length; i++){
 			if(e.touches[i].clientX >= 250 && e.touches[i].clientX <= 400 && e.touches[i].clientY >= 800){
 				keyDown[68] = true;
