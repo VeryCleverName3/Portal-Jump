@@ -88,7 +88,7 @@ antiCheat();
                 mouseY = e.clientY;
             }
 	    ontouchmove = function(e) {
-		for(var i = 0; i <= 3; i++){
+		for(var i = 0; i < e.touches.length; i++){
 			if(e.touches[i].clientX >= 250 && e.touches[i].clientX <= 400 && e.touches[i].clientY >= 800){
 				keyDown[68] = true;
 			} else keyDown[68] = false;
@@ -176,7 +176,18 @@ antiCheat();
                 }
             });
 	    ontouchstart = function(e) {
-		mouseDown[e.which] = true;
+		for(var i = 0; i <= e.touches.length; i++){
+                	mouseX = e.touches[i].clientX;
+                	mouseY = e.touches[i].clientY;
+			if(e.touches[i].clientX >= 500 && e.touches[i].clientX <= 700 && e.touches[i].clientY >= 1100 && e.touches[i].clientY <= 1300){
+				keyDown[32] = true;
+			} else keyDown[32] = false;
+			if(e.touches[i].clientX >= 500 && e.touches[i].clientX <= 700 && e.touches[i].clientY >= 850 && client.touches[i].y <= 1050){
+				mouseDown[1] = true;
+			} else {
+				mouseDown[1] = false;
+			}
+		}
 		if(gameOver){
 			window.location.reload(true);
 		}
@@ -246,18 +257,6 @@ antiCheat();
                         gameStarted = true;  
 		    }
                 }
-		for(var i = 0; i <= 3; i++){
-                	mouseX = e.touches[i].clientX;
-                	mouseY = e.touches[i].clientY;
-			if(e.touches[i].clientX >= 500 && e.touches[i].clientX <= 700 && e.touches[i].clientY >= 1100 && e.touches[i].clientY <= 1300){
-				keyDown[32] = true;
-			} else keyDown[32] = false;
-			if(e.touches[i].clientX >= 500 && e.touches[i].clientX <= 700 && e.touches[i].clientY >= 850 && client.touches[i].y <= 1050){
-				mouseDown[1] = true;
-			} else {
-				mouseDown[1] = false;
-			}
-		}
 	    }
             document.addEventListener("mouseup", function(e) {
                 mouseDown[e.which] = false;
