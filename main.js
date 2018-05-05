@@ -90,20 +90,18 @@ antiCheat();
 	    ontouchmove = function(e) {
 		mouseX = e.touches[0].clientX;
 		mouseY = e.touches[0].clientY;
-		for(var i = 0; i < e.touches.length; i++){
-			if(e.touches[i].clientX >= 250 && e.touches[i].clientX <= 400 && e.touches[i].clientY >= 800){
-				keyDown[68] = true;
-			} else keyDown[68] = false;
-			if(e.touches[i].clientX <= 150 && e.touches[i].clientY >= 800){
-				keyDown[65] = true;
-			} else keyDown[65] = false;
-			if(e.touches[i].clientY <= 1025 && e.touches[i].clientY >= 800 && e.touches[i].clientX <= 400){
-				keyDown[87] = true;
-			} else keyDown[87] = false;
-			if(e.touches[i].clientY >= 1125 && e.touches[i].clientX <= 400){
-				keyDown[83] = true;
-			} else keyDown[83] = false;
-		}
+		if(e.touches[0].clientX >= 250 && e.touches[0].clientX <= 400 && e.touches[0].clientY >= 800){
+			keyDown[68] = true;
+		} else keyDown[68] = false;
+		if(e.touches[0].clientX <= 150 && e.touches[0].clientY >= 800){
+			keyDown[65] = true;
+		} else keyDown[65] = false;
+		if(e.touches[0].clientY <= 1025 && e.touches[0].clientY >= 800 && e.touches[0].clientX <= 400){
+			keyDown[87] = true;
+		} else keyDown[87] = false;
+		if(e.touches[0].clientY >= 1125 && e.touches[0].clientX <= 400){
+			keyDown[83] = true;
+		} else keyDown[83] = false;
             }
             document.addEventListener("mousedown", function(e) {
                 mouseDown[e.which] = true;
@@ -179,8 +177,6 @@ antiCheat();
             });
 	    ontouchstart = function(e) {
 		for(var i = 0; i < e.touches.length; i++){
-                	mouseX = e.touches[i].clientX;
-                	mouseY = e.touches[i].clientY;
 			if(e.touches[i].clientX >= 500 && e.touches[i].clientX <= 700 && e.touches[i].clientY >= 1100 && e.touches[i].clientY <= 1300){
 				keyDown[32] = true;
 			} else keyDown[32] = false;
