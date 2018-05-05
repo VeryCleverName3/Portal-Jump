@@ -184,7 +184,7 @@ antiCheat();
 			if(e.touches[i].clientX >= 500 && e.touches[i].clientX <= 700 && e.touches[i].clientY >= 1100 && e.touches[i].clientY <= 1300){
 				keyDown[32] = true;
 			} else keyDown[32] = false;
-			if(e.touches[i].clientX >= 500 && e.touches[i].clientX <= 700 && e.touches[i].clientY >= 850 && client.touches[i].y <= 1050){
+			if(e.touches[i].clientX >= 500 && e.touches[i].clientX <= 700 && e.touches[i].clientY >= 850 && e.touches[i].clientY <= 1050){
 				mouseDown[1] = true;
 			} else {
 				mouseDown[1] = false;
