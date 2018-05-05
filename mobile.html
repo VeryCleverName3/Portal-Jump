@@ -21,8 +21,6 @@
                 margin-left: 0;
                 margin-right: 0;
                 cursor: none;
-                height: 800px;
-                width: 800px;
             }
 	    @font-face {
 		font-family: Impact;
@@ -35,6 +33,13 @@
     </head>
     <body>
         <canvas id="gameCanvas" width="800" height="800" style="border:1px solid #000000;"></canvas>
+	<canvas id = "controlCanvas" width = "800" height = "622"></canvas>
+	<script>
+		var c = document.getElementById("controlCanvas");
+		var ctx = c.getContext("2d");
+		ctx.fillStyle = "pink";
+		ctx.fillRect(0, 0, 800, 600);
+	</script>
         <script src = "main.js"></script>
     </body>
 </html>
