@@ -88,12 +88,12 @@ antiCheat();
                 mouseY = e.clientY;
             }
 	    ontouchmove = function(e) {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-		if(e.clientX >= 250 && e.clientX <= 400){
+                mouseX = e.touches[0].clientX;
+                mouseY = e.touches[0].clientY;
+		if(e.touches[0].clientX >= 250 && e.touches[0].clientX <= 400){
 			keyDown[68] = true;
 		} else keyDown[68] = false;
-		if(e.clientX <= 150){
+		if(e.touches[0].clientX <= 150){
 			keyDown[65] = true;
 		} else keyDown[65] = false;
             }
@@ -170,8 +170,8 @@ antiCheat();
                 }
             });
 	    ontouchstart = function(e) {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
+                mouseX = e.touches[0].clientX;
+                mouseY = e.touches[0].clientY;
 		mouseDown[e.which] = true;
 		if(gameOver){
 			window.location.reload(true);
