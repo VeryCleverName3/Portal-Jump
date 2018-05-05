@@ -1650,6 +1650,7 @@
 			if(bossFight){
 				if(!bossFightStarted){
 					bossFightStarted = true;
+					impossible = false;
 				}
 				ctx.drawImage(bossImage, bossX - (bossImage.width / 2), bossY);
 			} else bossFightStarted = false;
