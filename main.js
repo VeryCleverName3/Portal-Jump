@@ -178,7 +178,7 @@ antiCheat();
                 }
             });
 	    ontouchstart = function(e) {
-		for(var i = 0; i <= e.touches.length; i++){
+		for(var i = 0; i < e.touches.length; i++){
                 	mouseX = e.touches[i].clientX;
                 	mouseY = e.touches[i].clientY;
 			if(e.touches[i].clientX >= 500 && e.touches[i].clientX <= 700 && e.touches[i].clientY >= 1100 && e.touches[i].clientY <= 1300){
