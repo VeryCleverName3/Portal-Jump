@@ -114,6 +114,7 @@
             var phaseLoop;
             var phaseShiftStarted = false;
             var phase = 1;
+	    var bossFight = false;
 	    if (typeof(localStorage.playerImage) == "undefined") localStorage.playerImage = "";
 	    var hasWon = false;
 	    var playerImage = new Image();
@@ -362,6 +363,7 @@
                 metaGameManager();
                 ctx.fillStyle = "black";
                 portals();
+		bossManager();
                 ctx.fillStyle = "black";
                 ctx.fillRect(0, 625, 800, 175);
 		if(localStorage.playerImage == "wizard.png" && !metaGame) ctx.drawImage(playerImage, x - (playerImage.width / 2), y - (playerImage.height / 2), playerImage.width, playerImage.height);
@@ -1628,6 +1630,9 @@
 		    } else phaseShiftStarted = false;
 		}
             }
+	}
+	function bossManager()	{
+		
 	}
         </script>
     </body>
