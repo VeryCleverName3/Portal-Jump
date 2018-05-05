@@ -40,8 +40,16 @@
 	<script>
 		var c = document.getElementById("controlCanvas");
 		var ctx = c.getContext("2d");
-		ctx.fillStyle = "blue";
-		ctx.fillRect(0, 0, 800, 550);
+		ctx.fillStyle = "lightgrey";
+		ctx.fillRect(0, 0, 400, 550);
+		ctx.beginPath();
+		ctx.arc(600, 375, 100, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.closePath();
+		ctx.beginPath();
+		ctx.arc(600, 175, 100, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.closePath();
 	</script>
         <script src = "main.js"></script>
     </body>
