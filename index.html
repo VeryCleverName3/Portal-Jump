@@ -114,6 +114,8 @@
             var phaseLoop;
             var phaseShiftStarted = false;
             var phase = 1;
+	    var bossImage = new Image();
+	    bossImage.src = "Boss.png";
 	    var bossFight = false;
 	    var bossX = 400;
 	    var bossY = 0;
@@ -1633,9 +1635,11 @@
 		    } else phaseShiftStarted = false;
 		}
             }
-	}
-	function bossManager()	{
-		
+		function bossManager()	{
+			if(true){
+				ctx.drawImage(bossImage, bossX - (bossImage.width / 2), bossY);
+			}
+		}
 	}
         </script>
     </body>
