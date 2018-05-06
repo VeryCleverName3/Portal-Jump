@@ -1722,12 +1722,157 @@ antiCheat();
 		    } else phaseShiftStarted = false;
 		}
             }
+		function bossPhaseManager(){
+			var stage = 1;
+			var tempRand;
+			var tempRand2;
+			var tempRand3;
+			antiGrav = false;
+			blackOut = false;
+			metaGame = false;
+			phaseShift = false;
+			impossible = false;
+			if(stage >= 1){
+				tempRand = Math.floor(Math.random() * 5) + 1;
+				if(tempRand == 1){
+					antiGrav = true;
+				}
+				if(tempRand == 2){
+					blackOut = true;
+				}
+				if(tempRand == 3){
+					metaGame = true;
+				}
+				if(tempRand == 4){
+					phaseShift = true;
+				}
+				if(tempRand == 5){
+					antiGrav = true;
+				}
+			}
+			if(stage >= 2){
+				tempRand2 = Math.floor(Math.random() * 5) + 1;
+				while(tempRand2 == tempRand) {
+					tempRand2 = Math.floor(Math.random() * 5) + 1;
+				}
+				if(tempRand2 == 1){
+					antiGrav = true;
+				}
+				if(tempRand2 == 2){
+					blackOut = true;
+				}
+				if(tempRand2 == 3){
+					metaGame = true;
+				}
+				if(tempRand2 == 4){
+					phaseShift = true;
+				}
+				if(tempRand2 == 5){
+					antiGrav = true;
+				}
+			}
+			if(stage >= 3){
+				tempRand2 = Math.floor(Math.random() * 5) + 1;
+				while((tempRand3 == tempRand) || (tempRand3 == tempRand2)) {
+					tempRand3 = Math.floor(Math.random() * 5) + 1;
+				}
+				if(tempRand3 == 1){
+					antiGrav = true;
+				}
+				if(tempRand3 == 2){
+					blackOut = true;
+				}
+				if(tempRand3 == 3){
+					metaGame = true;
+				}
+				if(tempRand3 == 4){
+					phaseShift = true;
+				}
+				if(tempRand3 == 5){
+					antiGrav = true;
+				}
+			}
+			if(stage < 3){
+				stage++;
+			}
+			setInterval(function(){
+				antiGrav = false;
+				blackOut = false;
+				metaGame = false;
+				phaseShift = false;
+				impossible = false;
+				if(stage >= 1){
+					tempRand = Math.floor(Math.random() * 5) + 1;
+					if(tempRand == 1){
+						antiGrav = true;
+					}
+					if(tempRand == 2){
+						blackOut = true;
+					}
+					if(tempRand == 3){
+						metaGame = true;
+					}
+					if(tempRand == 4){
+						phaseShift = true;
+					}
+					if(tempRand == 5){
+						antiGrav = true;
+					}
+				}
+				if(stage >= 2){
+					tempRand2 = Math.floor(Math.random() * 5) + 1;
+					while(tempRand2 == tempRand) {
+						tempRand2 = Math.floor(Math.random() * 5) + 1;
+					}
+					if(tempRand2 == 1){
+						antiGrav = true;
+					}
+					if(tempRand2 == 2){
+						blackOut = true;
+					}
+					if(tempRand2 == 3){
+						metaGame = true;
+					}
+					if(tempRand2 == 4){
+						phaseShift = true;
+					}
+					if(tempRand2 == 5){
+						antiGrav = true;
+					}
+				}
+				if(stage >= 3){
+					tempRand2 = Math.floor(Math.random() * 5) + 1;
+					while((tempRand3 == tempRand) || (tempRand3 == tempRand2)) {
+						tempRand3 = Math.floor(Math.random() * 5) + 1;
+					}
+					if(tempRand3 == 1){
+						antiGrav = true;
+					}
+					if(tempRand3 == 2){
+						blackOut = true;
+					}
+					if(tempRand3 == 3){
+						metaGame = true;
+					}
+					if(tempRand3 == 4){
+						phaseShift = true;
+					}
+					if(tempRand3 == 5){
+						antiGrav = true;
+					}
+				}
+				if(stage < 3){
+					stage++;
+				}
+			}, 10000);
+		}
 		function bossManager()	{
 			if(bossFight){
 				if(!bossFightStarted){
 					bossFightStarted = true;
 					impossible = false;
 					bossYVelocity = 5;
+					bossPhaseManager();
 				}
 				bossY += bossYVelocity;
 				if(bossY >= - 40){
