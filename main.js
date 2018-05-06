@@ -1885,11 +1885,11 @@ antiCheat();
 					bossYVelocity = 0;
 				}
 				if(score >= 300){
-					bossY = 45;
+					bossY = -35;
 					bossYVelocity = 5;
 					ctx.fillStyle = "purple";
-					ctx.fillRect(bossX + 220, bossX + 270, bossY - 200, bossY);
-					ctx.fillRect(bossX - 220, bossX - 270, bossY - 200, bossY);
+					ctx.fillRect(bossX + 220, 0, 50, bossY);
+					ctx.fillRect(bossX - 270, 0, 50, bossY);
 					if(bossY >= 200){
 						bossYVelocity = 0;
 					}
