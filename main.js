@@ -189,6 +189,9 @@ antiCheat();
 		}
 		mouseX = e.touches[0].clientX;
                 mouseY = e.touches[0].clientY;
+		if(mouseX <= 100 && mouseY <= 100){
+			document.location = "PlayerSheet.html";
+		}
 		if(gameOver){
 			window.location.reload(true);
 		}
