@@ -361,7 +361,7 @@ antiCheat();
                     ctx.fillRect(375, 600, 50, 50);
                 }
 		if (highscore >= 300) {
-			ctx.drawImage(bossIcon, 400 - (bossIcon.width / 2), 700 - (bossIcon.height / 2));
+			ctx.drawImage(bossIcon, 400 - (bossIcon.width / 2), 725 - (bossIcon.height / 2));
 		}
                 drawMouse();
                 ctx.font = "55px Impact";
