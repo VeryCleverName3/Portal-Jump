@@ -192,6 +192,12 @@ antiCheat();
 		if(mouseX <= 100 && mouseY <= 100){
 			document.location = "PlayerSheet.html";
 		}
+		if(mouseX <= 100 && mouseY <= 200){
+			document.location = "SaveCodePage.html";
+		}
+		if(mouseX <= 100 && mouseY <= 300){
+			document.location = "ContactPage.html";
+		}
 		if(gameOver){
 			window.location.reload(true);
 		}
@@ -353,6 +359,8 @@ antiCheat();
 		if(screen.width <= 699){
 			ctx.textAlign = "start";
 			ctx.fillText("Skin Select", 10, 30);
+			ctx.fillText("Save Code", 10, 130);
+			ctx.fillText("Contact Me", 10, 230);
 			ctx.textAlign = "center";
 		}
 		ctx.font = "55px Impact";
