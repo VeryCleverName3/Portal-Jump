@@ -456,7 +456,11 @@ antiCheat();
 			ctx.fillRect(x - 5, y - 5, 10, 10);
 			ctx.strokeRect(x - 5, y - 5, 10, 10);
 		}
-		if(!metaGame) ctx.drawImage(playerImage, x - (playerImage.width / 2), y - (playerImage.height / 2), playerImage.width, playerImage.height);
+		if(!metaGame) {
+			if(antiGrav) ctx.rotate(180);
+			ctx.drawImage(playerImage, x - (playerImage.width / 2), y - (playerImage.height / 2), playerImage.width, playerImage.height);
+			if(antiGrav) ctx.rotate(180);
+		}
 		if(localStorage.pwd == "CorrectHorseBatteryStaple"){
 			var grd = ctx.createLinearGradient(0, 0, 0, 600);
 			grd.addColorStop(0, "red");
