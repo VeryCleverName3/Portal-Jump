@@ -1720,7 +1720,7 @@ antiCheat();
 			    	
 			    }
 		    } else phaseShiftStarted = false;
-		}
+		} else phase = 1;
             }
 		function bossPhaseManager(){
 			var stage = 1;
