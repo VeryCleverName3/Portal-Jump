@@ -1885,13 +1885,12 @@ antiCheat();
 					bossYVelocity = 0;
 				}
 				if(score >= 300){
-					bossY = -35;
-					bossYVelocity = 5;
+					bossY += 5;
 					ctx.fillStyle = "purple";
 					ctx.fillRect(bossX + 220, 0, 50, bossY);
 					ctx.fillRect(bossX - 270, 0, 50, bossY);
 					if(bossY >= 200){
-						bossYVelocity = 0;
+						bossY -= 5;
 					}
 					if(y <= bossY && (isShootingNow(bossX + 220, bossX + 270, bossY - 200, bossY)) || (isShootingNow(bossX - 270, bossX - 220, bossY - 200, bossY))){
 						bossHealth = 0;
