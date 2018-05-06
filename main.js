@@ -64,7 +64,7 @@ antiCheat();
 		playerImage.height = 50;
 		playerImage.width = 50;
 	    }
-	    if(localStorage.highscore >= 300){
+	    if(localStorage.highscore >= 350){
 		hasWon = true;    
 	    }
             for (var i = 0; i <= 3; i++) {
