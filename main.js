@@ -192,10 +192,10 @@ antiCheat();
 		if(mouseX <= 100 && mouseY <= 100){
 			document.location = "PlayerSheet.html";
 		}
-		if(mouseX <= 100 && mouseY <= 200){
+		if(mouseX <= 100 && mouseY <= 200 && mouseY > 100){
 			document.location = "SaveCodePage.html";
 		}
-		if(mouseX <= 100 && mouseY <= 300){
+		if(mouseX <= 100 && mouseY <= 300 && mouseY > 200){
 			document.location = "ContactPage.html";
 		}
 		if(gameOver){
