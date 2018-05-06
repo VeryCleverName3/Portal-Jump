@@ -429,6 +429,7 @@ antiCheat();
                     velocityY -= 0.5;
 		    if(impossible) velocityY -= 0.5;
                 }
+		bossManager();
                 shooting();
                 phaseManager();
                 drawObstacles();
@@ -467,7 +468,6 @@ antiCheat();
                     ctx.fillStyle = "blue";
                     ctx.fillRect(portalX[1], portalY[1], 100, 10);
                 }
-		bossManager();
                 blackOutManager();
                 ctx.font = "30px Impact";
                 ctx.fillStyle = "black";
