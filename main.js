@@ -1862,7 +1862,7 @@ antiCheat();
 					}
 				}
 				if(stage >= 3){
-					tempRand2 = Math.floor(Math.random() * 5) + 1;
+					tempRand3 = Math.floor(Math.random() * 5) + 1;
 					while((tempRand3 == tempRand) || (tempRand3 == tempRand2)) {
 						tempRand3 = Math.floor(Math.random() * 5) + 1;
 					}
@@ -1882,9 +1882,7 @@ antiCheat();
 						impossible = true;
 					}
 				}
-				if(stage < 3){
-					stage++;
-				}
+				stage++;
 			}, 10000);
 		}
 		function bossManager()	{
