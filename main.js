@@ -352,7 +352,7 @@ antiCheat();
 		ctx.fillText("By Carter Semrad", 400, 150);
 		if(screen.width <= 699){
 			ctx.textAlign = "start";
-			ctx.fillText("Skin Select", 10, 10);
+			ctx.fillText("Skin Select", 10, 30);
 			ctx.textAlign = "center";
 		}
 		ctx.font = "55px Impact";
