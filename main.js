@@ -1884,7 +1884,7 @@ antiCheat();
 				if(bossY == - 40){
 					bossYVelocity = 0;
 				}
-				if(score >= 310){
+				if(score >= 300){
 					bossY = 45;
 					bossYVelocity = 5;
 					ctx.fillStyle = "purple";
