@@ -6,7 +6,7 @@ antiCheat();
 			}
 		}, 1);
             var c = document.getElementById("gameCanvas");
-	    var lvl1Sound = new Audio("lvl1Sound.m4a");
+	    var lvl1Sound = new Audio("lvl1Sound.mp3");
 	    lvl1Sound.loop = true;
 	    lvl1Sound.play();
 	    var winPlayer = new Image();
