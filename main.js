@@ -8,6 +8,7 @@ antiCheat();
             var c = document.getElementById("gameCanvas");
 	    var winPlayer = new Image();
 	    winPlayer.src = "winPlayer.png";
+	    var bossIcon = new Image("BossIcon.png");
             var ctx = c.getContext("2d");
             var x = 400;
             var y = 250;
@@ -358,6 +359,9 @@ antiCheat();
                     ctx.fillStyle = "black";
                     ctx.fillRect(375, 600, 50, 50);
                 }
+		if(highscore >= 300){
+			ctx.drawImage(bossIcon, 400 - (bossIcon.width / 2), 700 - (bossIcon.height / 2));
+		}
                 drawMouse();
                 ctx.font = "55px Impact";
                 ctx.fillStyle = "black";
