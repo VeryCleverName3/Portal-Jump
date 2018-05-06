@@ -93,17 +93,13 @@ antiCheat();
 		mouseY = e.touches[0].clientY;
 		if(e.touches[0].clientX >= 250 && e.touches[0].clientX <= 400 && e.touches[0].clientY >= 800){
 			keyDown[68] = true;
-			keyDown[39] = true;
 		} else {
 			keyDown[68] = false;
-			keyDown[39] = false;
 		}
 		if(e.touches[0].clientX <= 150 && e.touches[0].clientY >= 800){
 			keyDown[65] = true;
-			keyDown[37] = true;
 		} else {
 			keyDown[65] = false;
-			keyDown[37] = false;
 		}
 		if(e.touches[0].clientY <= 1025 && e.touches[0].clientY >= 800 && e.touches[0].clientX <= 400){
 			keyDown[87] = true;
@@ -193,6 +189,13 @@ antiCheat();
 				mouseDown[1] = true;
 			} else {
 				mouseDown[1] = false;
+			}
+			if(e.touches[i].clientY < 800 && e.touches[i].clientX < 400){
+				keyDown[37] = true;
+				keyDown[39] = false;
+			} else if(e.touches[i].clientY < 800 && e.touches[i].clientX > 400){
+				keyDown[39] = true;
+				keyDown[37] = false;
 			}
 		}
 		mouseX = e.touches[0].clientX;
