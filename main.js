@@ -1893,7 +1893,7 @@ antiCheat();
 					if(bossY >= 200){
 						bossYVelocity = 0;
 					}
-					if(y <= bossY && (isShootingNow(bossX + 220, bossX + 270, bossY - 200, bossY) || (isShootingNow(bossX - 270, bossX - 220, bossY - 200, bossY))){
+					if(y <= bossY && (isShootingNow(bossX + 220, bossX + 270, bossY - 200, bossY)) || (isShootingNow(bossX - 270, bossX - 220, bossY - 200, bossY))){
 						bossHealth = 0;
 					   	score = 350;
 					}
