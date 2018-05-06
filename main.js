@@ -429,6 +429,10 @@ antiCheat();
                     velocityY -= 0.5;
 		    if(impossible) velocityY -= 0.5;
                 }
+		if(antiGrav){
+			ctx.fillStyle = "cyan";
+			ctx.fillRect(0, 0, 800, 800);
+		}
 		bossManager();
                 shooting();
                 phaseManager();
@@ -834,8 +838,6 @@ antiCheat();
                         impossible = true
                     }
                     if (antiGrav) {
-                        ctx.fillStyle = "cyan";
-                        ctx.fillRect(0, 0, 800, 800);
                         if (y > 25) {
                             velocityY += 0.5;
                         } else {
@@ -1233,8 +1235,6 @@ antiCheat();
                     }
 		    if(score >= 300) bossFight = true;
                     if (antiGrav) {
-                        ctx.fillStyle = "cyan";
-                        ctx.fillRect(0, 0, 800, 800);
                         if (y > 25) {
                             velocityY += 0.5;
                         } else {
