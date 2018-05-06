@@ -433,7 +433,6 @@ antiCheat();
 			ctx.fillStyle = "cyan";
 			ctx.fillRect(0, 0, 800, 800);
 		}
-		bossManager();
                 shooting();
                 phaseManager();
                 drawObstacles();
@@ -442,6 +441,7 @@ antiCheat();
                     drawObstacles();
                     drawObstacles2();
                 }
+		bossManager();
                 ctx.fillStyle = "black";
 		if(hasWon && localStorage.playerImage.length <= 1){
 			ctx.fillStyle = ctx.strokeStyle;
