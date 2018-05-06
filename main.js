@@ -52,6 +52,7 @@ antiCheat();
 	    var bossFightStarted = false;
 	    var bossX = 400;
 	    var bossY = -270;
+	    var bossYVelocity = 0;
 	    var bossHealth = 3;
 	    if (typeof(localStorage.playerImage) == "undefined") localStorage.playerImage = "";
 	    var hasWon = false;
@@ -1722,6 +1723,11 @@ antiCheat();
 				if(!bossFightStarted){
 					bossFightStarted = true;
 					impossible = false;
+					bossYVelocity = 5;
+				}
+				bossY += bossYVelocity;
+				if(bossY >= - 40){
+					bossYVelocity = 0;
 				}
 				ctx.drawImage(bossImage, bossX - (bossImage.width / 2), bossY);
 			} else bossFightStarted = false;
