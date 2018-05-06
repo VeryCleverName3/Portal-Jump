@@ -1881,7 +1881,7 @@ antiCheat();
 				}
 				bossY += bossYVelocity;
 				bossX = x;
-				if(bossY >= - 40){
+				if(bossY >= - 40 && bossY <= -50){
 					bossYVelocity = 0;
 				}
 				if(score >= 300){
