@@ -1816,7 +1816,7 @@ antiCheat();
 						phaseShift = true;
 					}
 					if(tempRand == 5){
-						antiGrav = true;
+						impossible = true;
 					}
 				}
 				if(stage >= 2){
@@ -1837,7 +1837,7 @@ antiCheat();
 						phaseShift = true;
 					}
 					if(tempRand2 == 5){
-						antiGrav = true;
+						impossible = true;
 					}
 				}
 				if(stage >= 3){
@@ -1858,7 +1858,7 @@ antiCheat();
 						phaseShift = true;
 					}
 					if(tempRand3 == 5){
-						antiGrav = true;
+						impossible = true;
 					}
 				}
 				if(stage < 3){
