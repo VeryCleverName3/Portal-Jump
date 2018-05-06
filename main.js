@@ -8,7 +8,8 @@ antiCheat();
             var c = document.getElementById("gameCanvas");
 	    var winPlayer = new Image();
 	    winPlayer.src = "winPlayer.png";
-	    var bossIcon = new Image("BossIcon.png");
+	    var bossIcon = new Image();
+	    bossIcon.src = "BossIcon.png";
             var ctx = c.getContext("2d");
             var x = 400;
             var y = 250;
@@ -293,7 +294,7 @@ antiCheat();
 		ctx.fillStyle = "white";
 		ctx.fillRect(0, 0, 800, 800);
 		ctx.fillStyle = "black";
-		ctx.fillRect(0, 600, 800, 200);
+		ctx.fillRect(0, 625, 800, 200);
 		ctx.strokeStyle = "black";
                 ctx.fillStyle = "black";
 		if(!hasWon){
@@ -359,7 +360,7 @@ antiCheat();
                     ctx.fillStyle = "black";
                     ctx.fillRect(375, 600, 50, 50);
                 }
-		if(highscore >= 300){
+		if (highscore >= 300) {
 			ctx.drawImage(bossIcon, 400 - (bossIcon.width / 2), 700 - (bossIcon.height / 2));
 		}
                 drawMouse();
