@@ -45,6 +45,7 @@ antiCheat();
             var phaseLoop;
             var phaseShiftStarted = false;
             var phase = 1;
+	    var mobileDirection = 1;
 	    var bossImage = new Image();
 	    bossImage.src = "Boss.png";
 	    var bossFight = false;
@@ -365,6 +366,7 @@ antiCheat();
 		    if(screen.width <= 699) {
 			    mouseX = x - 50;
 			    mouseY = y;
+			    mobileDirection = 1;
 		    }
                 }
                 if (keyDown[68] && x < 775) {
@@ -374,8 +376,18 @@ antiCheat();
 		    if(screen.width <= 699){
 			    mouseX = x + 50;
 			    mouseY = y;
+			    mobileDirection = 2;
 		    }
                 }
+		if(screen.width <= 699) {
+			if(mobileDirection == 1){
+				mouseX = x - 50;
+				mouseY = y;
+			} else {
+				mouseX = x + 50;
+				mouseY = y;
+			}
+		}
                 if (keyDown[87] && onGround() && !antiGrav) {
                     velocityY = 15;
 		    if(impossible) velocityY = 20;
