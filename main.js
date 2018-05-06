@@ -1733,7 +1733,7 @@ antiCheat();
 				if(bossY >= - 40){
 					bossYVelocity = 0;
 				}
-				if(x < =670 && x >= 130 && y <= 230){
+				if(x <= 670 && x >= 130 && y <= 230){
 					gameOver = true;
 				}
 				ctx.drawImage(bossImage, bossX - (bossImage.width / 2), bossY);
