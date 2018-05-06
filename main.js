@@ -709,14 +709,6 @@ antiCheat();
                 }
             }
             function onGround() {
-		if (y >= bossY - 25 && y <= bossY + 50) {
-                    y = bossY - 25 + bossYVelocity;
-                    if (antiGrav) {
-                        velocityY = 0;
-                    } else
-                        velocityY = -bossYVelocity;
-                    return true;
-                }
                 if (phase == 1) {
                     if (y >= obstacleDraw[10] - 25 && y <= obstacleDraw[10] + 25) {
                         y = obstacleDraw[10] - 25;
@@ -746,6 +738,14 @@ antiCheat();
                             velocityY = 0;
                         } else
                             velocityY = -5;
+                        return true;
+                    }
+		    if (y >= bossY - 25 && y <= bossY + 50) {
+                        y = bossY - 25 + bossYVelocity;
+                        if (antiGrav) {
+                            velocityY = 0;
+                        } else
+                            velocityY = -bossYVelocity;
                         return true;
                     }
                     return false;
@@ -779,6 +779,14 @@ antiCheat();
                             velocityY = 0;
                         } else
                             velocityY = -5;
+                        return true;
+                    }
+		    if (y >= bossY - 25 && y <= bossY + 50) {
+                        y = bossY - 25 + bossYVelocity;
+                        if (antiGrav) {
+                            velocityY = 0;
+                        } else
+                            velocityY = -bossYVelocity;
                         return true;
                     }
                     return false;
