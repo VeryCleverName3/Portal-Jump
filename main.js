@@ -460,7 +460,6 @@ antiCheat();
                 metaGameManager();
                 ctx.fillStyle = "black";
                 portals();
-		bossManager();
                 ctx.fillStyle = "black";
                 ctx.fillRect(0, 625, 800, 175);
 		if(localStorage.playerImage == "wizard.png" && !metaGame) ctx.drawImage(playerImage, x - (playerImage.width / 2), y - (playerImage.height / 2), playerImage.width, playerImage.height);
@@ -468,6 +467,7 @@ antiCheat();
                     ctx.fillStyle = "blue";
                     ctx.fillRect(portalX[1], portalY[1], 100, 10);
                 }
+		bossManager();
                 blackOutManager();
                 ctx.font = "30px Impact";
                 ctx.fillStyle = "black";
@@ -1877,9 +1877,6 @@ antiCheat();
 				bossY += bossYVelocity;
 				if(bossY >= - 40){
 					bossYVelocity = 0;
-				}
-				if(x <= 670 && x >= 130 && y <= 230){
-					gameOver = true;
 				}
 				ctx.drawImage(bossImage, bossX - (bossImage.width / 2), bossY);
 			} else bossFightStarted = false;
