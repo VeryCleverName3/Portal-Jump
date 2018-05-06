@@ -794,7 +794,9 @@ antiCheat();
                     obstacleDraw2[8] = -50;
                 }
                 if (type == 9) {
-                    obstacleDraw2[9] = -100;
+		    if(bossFight){
+			    type = 10;
+		    } else obstacleDraw2[9] = -100;
                 }
                 if (type == 10) {
                     obstacleDraw2[10] = 700;
@@ -1190,7 +1192,9 @@ antiCheat();
                     obstacleDraw[8] = -50;
                 }
                 if (type == 9) {
-                    obstacleDraw[9] = -100;
+		    if(bossFight){
+			    type = 10;
+		    } else obstacleDraw[9] = -100;
                 }
                 if (type == 10) {
                     obstacleDraw[10] = 700;
@@ -1728,6 +1732,9 @@ antiCheat();
 				bossY += bossYVelocity;
 				if(bossY >= - 40){
 					bossYVelocity = 0;
+				}
+				if(x < =670 && x >= 130 && y <= 230){
+					gameOver = true;
 				}
 				ctx.drawImage(bossImage, bossX - (bossImage.width / 2), bossY);
 			} else bossFightStarted = false;
