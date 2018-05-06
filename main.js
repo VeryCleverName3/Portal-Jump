@@ -1899,7 +1899,7 @@ antiCheat();
 				if(bossY >= - 40 && bossY <= -20){
 					bossYVelocity = 0;
 				}
-				if(score >= 300){
+				if(score >= 340){
 					bossY += 5;
 					ctx.fillStyle = "purple";
 					if(bossHealth > 0){
@@ -1913,7 +1913,7 @@ antiCheat();
 					}
 					if(y <= bossY && ((isShootingNow(bossX + 220, bossX + 270, bossY - 200, bossY)) || (isShootingNow(bossX - 270, bossX - 220, bossY - 200, bossY)))){
 						bossHealth = 0;
-					   	score = 350;
+						if(score < 350) score = 350;
 					}
 					if(bossHealth == 0){
 						bossYVelocity += 0.5;
