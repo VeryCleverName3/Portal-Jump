@@ -665,7 +665,7 @@ antiCheat();
                 }
             }
             function shooting() {
-                if (!metaGame) {
+                if (!metaGame || bossFight) {
                     ctx.beginPath();
                     ctx.moveTo(x, y);
                     ctx.lineTo(mouseX + ((mouseX - x) * 30), mouseY + ((mouseY - y) * 30));
@@ -709,6 +709,14 @@ antiCheat();
                 }
             }
             function onGround() {
+		if (y >= bossY - 25 && y <= bossY + 50) {
+                    y = bossY - 25 + bossYVelocity;
+                    if (antiGrav) {
+                        velocityY = 0;
+                    } else
+                        velocityY = -bossYVelocity;
+                    return true;
+                }
                 if (phase == 1) {
                     if (y >= obstacleDraw[10] - 25 && y <= obstacleDraw[10] + 25) {
                         y = obstacleDraw[10] - 25;
