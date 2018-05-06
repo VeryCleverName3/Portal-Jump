@@ -1886,12 +1886,16 @@ antiCheat();
 				if(score >= 300){
 					bossY += 5;
 					ctx.fillStyle = "purple";
-					ctx.fillRect(bossX + 220, 0, 50, bossY + 50);
-					ctx.fillRect(bossX - 270, 0, 50, bossY + 50);
+					if(bossHealth > 0){
+						ctx.fillRect(bossX + 220, 0, 50, bossY + 50);
+						ctx.fillRect(bossX - 270, 0, 50, bossY + 50);
+					}
+					if(x >= bossX + 220 && x <= bossX + 270 && y <= bossY) gameOver = true;
+					if(x <= bossX - 220 && x >= bossX - 270 && y <= bossY) gameOver = true;
 					if(bossY >= 200){
 						bossY -= 5;
 					}
-					if(y <= bossY && (isShootingNow(bossX + 220, bossX + 270, bossY - 200, bossY)) || (isShootingNow(bossX - 270, bossX - 220, bossY - 200, bossY))){
+					if(y <= bossY && ((isShootingNow(bossX + 220, bossX + 270, bossY - 200, bossY)) || (isShootingNow(bossX - 270, bossX - 220, bossY - 200, bossY)))){
 						bossHealth = 0;
 					   	score = 350;
 					}
