@@ -1880,8 +1880,26 @@ antiCheat();
 					bossPhaseManager();
 				}
 				bossY += bossYVelocity;
-				if(bossY >= - 40){
+				bossX = x;
+				if(bossY == - 40){
 					bossYVelocity = 0;
+				}
+				if(score >= 310){
+					bossY = 45;
+					bossYVelocity = 5;
+					ctx.fillStyle = "purple";
+					ctx.fillRect(bossX + 220, bossX + 270, bossY - 200, bossY);
+					ctx.fillRect(bossX - 220, bossX - 270, bossY - 200, bossY);
+					if(bossY >= 200){
+						bossYVelocity = 0;
+					}
+					if(y <= bossY && (isShootingNow(bossX + 220, bossX + 270, bossY - 200, bossY) || (isShootingNow(bossX - 270, bossX - 220, bossY - 200, bossY))){
+						bossHealth = 0;
+					   	score = 350;
+					}
+					if(bossHealth == 0){
+						bossYVelocity += 0.5;
+					}
 				}
 				ctx.drawImage(bossImage, bossX - (bossImage.width / 2), bossY);
 			} else bossFightStarted = false;
