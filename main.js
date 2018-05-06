@@ -350,6 +350,11 @@ antiCheat();
 		ctx.fillText("Portal Jump!", 400, 100);
                 ctx.font = "20px Impact";
 		ctx.fillText("By Carter Semrad", 400, 150);
+		if(screen.width <= 699){
+			ctx.textAlign = "start";
+			ctx.fillText("Skin Select", 10, 10);
+			ctx.textAlign = "center";
+		}
 		ctx.font = "55px Impact";
                 ctx.fillText("Highscore: " + highscore, 400, 200);
 		ctx.fillText("Level Select", 400, 350);
