@@ -94,6 +94,7 @@ antiCheat();
 				paused = true;
 				clearInterval(loop);
 				ctx.font = "55px Impact";
+				ctx.textAlign = "center";
 				ctx.fillText("Paused", 400, 400);
 			}
 		}
