@@ -1,5 +1,5 @@
-//antiCheat();
-//	function antiCheat() {
+antiCheat();
+	function antiCheat() {
 		setInterval(function(){
 			if(localStorage.highscore > highscore){
 				localStorage.highscore = highscore;	
@@ -26,7 +26,7 @@
             var obstacleDraw = [];
             var obstacleDraw2 = [];
             var gameOver = false;
-	    //setInterval(function(){if(!document.hasFocus()) gameOver = true;}, 1);
+	    setInterval(function(){if(!document.hasFocus()) gameOver = true;}, 1);
             var score = 0;
             var antiGrav = false;
             var antiGravOnGround = false;
@@ -47,6 +47,7 @@
             var phaseLoop;
             var phaseShiftStarted = false;
             var phase = 1;
+	    var paused = false;
 	    var mobileDirection = 1;
 	    var functions = [];
 	    var functionTimes = [];
@@ -84,6 +85,15 @@
 		}
 		if(e.which == 76) {
 			window.location.reload(true);
+		}
+		if(e.which == 80){
+			if(paused){
+				paused = false;
+				loop = setInterval(draw, 1000 / 6);
+			} else {
+				paused = true;
+				clearInterval(loop);
+			}
 		}
                 keyDown[e.which] = true;
             });
@@ -1939,4 +1949,4 @@
 			functionTimers[functions.length] = 0;
 			functions[functions.length] = func;
 		}
-	//}
+	}
