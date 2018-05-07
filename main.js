@@ -93,7 +93,7 @@ antiCheat();
 			} else {
 				paused = true;
 				clearInterval(loop);
-				ctx.textStyle = "55px Impact";
+				ctx.font = "55px Impact";
 				ctx.fillText("Paused", 400, 400);
 			}
 		}
