@@ -1933,8 +1933,8 @@
 			} else bossFightStarted = false;
 		}
 		function addToFunctions(func, time){
-			functions[functions.length] = func;
 			functionTimes[functions.length] = time * 1000 / 60;
 			functionTimers[functions.length] = 0;
+			functions[functions.length] = func;
 		}
 	//}
