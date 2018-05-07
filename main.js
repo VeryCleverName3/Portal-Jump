@@ -1,5 +1,5 @@
-antiCheat();
-	function antiCheat() {
+//antiCheat();
+//	function antiCheat() {
 		setInterval(function(){
 			if(localStorage.highscore > highscore){
 				localStorage.highscore = highscore;	
@@ -1937,4 +1937,4 @@ antiCheat();
 			functionTimes[functions.length - 1] = time * 1000 / 60;
 			functionTimers[functions.length - 1] = 0;
 		}
-	}
+	//}
