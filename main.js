@@ -1033,7 +1033,6 @@
                     i++;
                     if (score >= 10 || i == 10) {
                         functions[0] = function(){};
-			functions[1] = function(){};
                         i = 0;
                         var randomNum3 = 0;
                         var randomNum4 = 0;
@@ -1428,7 +1427,6 @@
                         i = 9;
                     i++;
                     if (score >= 10 || i == 10) {
-                        functions[0] = function(){};
 			functions[1] = function(){};
                         i = 0;
                         var randomNum3 = 0;
