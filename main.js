@@ -48,6 +48,9 @@ antiCheat();
             var phaseShiftStarted = false;
             var phase = 1;
 	    var mobileDirection = 1;
+	    var functions = [];
+	    var functionTimes = [];
+	    var functionTimers = []
 	    var bossImage = new Image();
 	    bossImage.src = "Boss.png";
 	    var bossFight = false;
@@ -389,6 +392,13 @@ antiCheat();
                 c = document.getElementById("gameCanvas");
                 ctx = c.getContext("2d");
                 ctx.fillStyle = "white";
+		for(var i = 0; i < functions.length; i++){
+			functionTimers[i]++;
+			if(functionTimers[i] >= functionTimes[i]){
+				functions[i]();
+				functionTimers[i] = 0;
+			}
+		}
                 if (impossible)
                     ctx.fillStyle = "darkred";
                 ctx.fillRect(0, 0, 800, 800);
@@ -1013,7 +1023,7 @@ antiCheat();
             }
             function obstacleManager2() {
                 var i = 1;
-                var stage1 = setInterval(function() {
+                var stage1 = addToFunctions(function() {
                     if (antiGrav && i == 9) {
                         spawnObstacle2(10);
                     } else
@@ -1026,7 +1036,7 @@ antiCheat();
                         i = 0;
                         var randomNum3 = 0;
                         var randomNum4 = 0;
-                        var stage2 = setInterval(function() {
+                        var stage2 = addToFunctions(function() {
                             var randomNum1 = Math.floor(Math.random() * 10);
                             var randomNum2 = Math.floor(Math.random() * 10);
                             while ((randomNum1 == 2 && randomNum2 == 3) || (randomNum1 == 3 && randomNum2 == 2) || (randomNum1 == 6 && randomNum2 == 7) || (randomNum1 == 7 && randomNum2 == 6)) {
@@ -1106,7 +1116,7 @@ antiCheat();
                             if (score >= 20 && !stagesStarted2[3]) {
                                 stagesStarted2[3] = true;
                                 var stage3 = setTimeout(function() {
-                                    setInterval(function() {
+                                    addToFunctions(function() {
                                         randomNum3 = Math.floor(Math.random() * 10);
                                         randomNum4 = Math.floor(Math.random() * 10);
                                         while ((randomNum3 == 2 && randomNum4 == 3) || (randomNum3 == 3 && randomNum4 == 2) || (randomNum3 == 6 && randomNum4 == 7) || (randomNum3 == 7 && randomNum4 == 6)) {
@@ -1408,7 +1418,7 @@ antiCheat();
             function obstacleManager() {
                 obstacleManager2();
                 var i = 1;
-                var stage1 = setInterval(function() {
+                var stage1 = addToFunctions(function() {
                     if (antiGrav && i == 9) {
                         spawnObstacle(10);
                     } else
@@ -1421,7 +1431,7 @@ antiCheat();
                         i = 0;
                         var randomNum3 = 0;
                         var randomNum4 = 0;
-                        var stage2 = setInterval(function() {
+                        var stage2 = addToFunctions(function() {
                             var randomNum1 = Math.floor(Math.random() * 10);
                             var randomNum2 = Math.floor(Math.random() * 10);
                             while ((randomNum1 == 2 && randomNum2 == 3) || (randomNum1 == 3 && randomNum2 == 2) || (randomNum1 == 6 && randomNum2 == 7) || (randomNum1 == 7 && randomNum2 == 6)) {
@@ -1501,7 +1511,7 @@ antiCheat();
                             if (score >= 20 && !stagesStarted[3]) {
                                 stagesStarted[3] = true;
                                 var stage3 = setTimeout(function() {
-                                    setInterval(function() {
+                                    addToFunctions(function() {
                                         randomNum3 = Math.floor(Math.random() * 10);
                                         randomNum4 = Math.floor(Math.random() * 10);
                                         while ((randomNum3 == 2 && randomNum4 == 3) || (randomNum3 == 3 && randomNum4 == 2) || (randomNum3 == 6 && randomNum4 == 7) || (randomNum3 == 7 && randomNum4 == 6)) {
@@ -1608,11 +1618,11 @@ antiCheat();
                 if (metaGame) {
                     if (!metaGameStarted) {
                         metaGameStarted = true;
-                        metaLoop1 = setInterval(function() {
+                        metaLoop1 = addToFunctions(function() {
                             metaObstacle[Math.floor(Math.random() * 2) + 1] = -35;
                         }, 3000);
                         setTimeout(function() {
-                            metaLoop2 = setInterval(function() {
+                            metaLoop2 = addToFunctions(function() {
                                 metaObstacle[Math.floor(Math.random() * 2) + 3] = -35;
                             }, 3000);
                         }, 1500);
@@ -1720,7 +1730,7 @@ antiCheat();
                 //if (phaseShift) {
                 //    if (!phaseShiftStarted) {
                  //       phaseShiftStarted = true;
-                 //       phaseLoop = setInterval(function() {
+                 //       phaseLoop = addToFunctions(function() {
                  //           if (phase == 1) {
                  //               phase = 2;
                  //           } else if (phase == 2) {
@@ -1818,7 +1828,7 @@ antiCheat();
 			if(stage < 3){
 				stage++;
 			}
-			setInterval(function(){
+			addToFunctions(function(){
 				antiGrav = false;
 				blackOut = false;
 				metaGame = false;
@@ -1921,5 +1931,10 @@ antiCheat();
 				}
 				ctx.drawImage(bossImage, bossX - (bossImage.width / 2), bossY);
 			} else bossFightStarted = false;
+		}
+		function addToFunctions(func, time){
+			functions[functions.length - 1] = func;
+			functionTimes[functions.length - 1] = time * 1000 / 60;
+			functionTimers[functions.length - 1] = 0;
 		}
 	}
