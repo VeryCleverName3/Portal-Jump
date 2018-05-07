@@ -1032,7 +1032,8 @@
                         i = 9;
                     i++;
                     if (score >= 10 || i == 10) {
-                        clearInterval(stage1);
+                        functions[0] = function(){};
+			functions[1] = function(){};
                         i = 0;
                         var randomNum3 = 0;
                         var randomNum4 = 0;
@@ -1427,7 +1428,8 @@
                         i = 9;
                     i++;
                     if (score >= 10 || i == 10) {
-                        clearInterval(stage1);
+                        functions[0] = function(){};
+			functions[1] = function(){};
                         i = 0;
                         var randomNum3 = 0;
                         var randomNum4 = 0;
@@ -1621,11 +1623,13 @@
                         metaLoop1 = addToFunctions(function() {
                             metaObstacle[Math.floor(Math.random() * 2) + 1] = -35;
                         }, 3000);
+		 	metaLoop1 = functions.length - 1;
                         setTimeout(function() {
                             metaLoop2 = addToFunctions(function() {
                                 metaObstacle[Math.floor(Math.random() * 2) + 3] = -35;
                             }, 3000);
                         }, 1500);
+			metaLoop2 = functions.length - 1;
                     }
                     ctx.fillStyle = "white";
                     ctx.fillRect(x - 25, y - 25, 50, 50);
@@ -1722,8 +1726,8 @@
                     }
                 } else {
                     metaGameStarted = false;
-                    clearInterval(metaLoop1);
-                    clearInterval(metaLoop2);
+                    functions[metaLoop1] = function(){};
+                    functions[metaLoop2] = function(){};
                 }
             }
             function phaseManager() {
