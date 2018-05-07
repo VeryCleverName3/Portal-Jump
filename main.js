@@ -89,7 +89,7 @@ antiCheat();
 		if(e.which == 80){
 			if(paused){
 				paused = false;
-				loop = setInterval(draw, 1000 / 6);
+				loop = setInterval(draw, 1000 / 60);
 			} else {
 				paused = true;
 				clearInterval(loop);
