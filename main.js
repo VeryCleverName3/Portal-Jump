@@ -393,7 +393,7 @@
                 ctx = c.getContext("2d");
                 ctx.fillStyle = "white";
 		for(var i = 0; i < functions.length; i++){
-			functionTimers[i]++;
+			functionTimers[i]+= 1000 / 60;
 			if(functionTimers[i] >= functionTimes[i]){
 				functions[i]();
 				functionTimers[i] = 0;
@@ -1933,7 +1933,7 @@
 			} else bossFightStarted = false;
 		}
 		function addToFunctions(func, time){
-			functionTimes[functions.length] = time * 1000 / 60;
+			functionTimes[functions.length] = time;
 			functionTimers[functions.length] = 0;
 			functions[functions.length] = func;
 		}
