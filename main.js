@@ -93,6 +93,7 @@ antiCheat();
 			} else {
 				paused = true;
 				clearInterval(loop);
+				ctx.text("Paused", 400, 400);
 			}
 		}
                 keyDown[e.which] = true;
