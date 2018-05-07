@@ -26,7 +26,7 @@
             var obstacleDraw = [];
             var obstacleDraw2 = [];
             var gameOver = false;
-	    setInterval(function(){if(!document.hasFocus()) gameOver = true;}, 1);
+	    //setInterval(function(){if(!document.hasFocus()) gameOver = true;}, 1);
             var score = 0;
             var antiGrav = false;
             var antiGravOnGround = false;
