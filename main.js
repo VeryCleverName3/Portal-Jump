@@ -93,7 +93,8 @@ antiCheat();
 			} else {
 				paused = true;
 				clearInterval(loop);
-				ctx.text("Paused", 400, 400);
+				ctx.textStyle = "55px Impact";
+				ctx.fillText("Paused", 400, 400);
 			}
 		}
                 keyDown[e.which] = true;
