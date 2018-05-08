@@ -1,0 +1,78 @@
+<html>
+    <head>
+	<title>Portal Jump</title>
+	<link rel="icon" type = "png" href="PortalJumpFavicon.png" />
+	<meta name = "viewport" content = "user-scalable=no">
+	<meta name = "apple-mobile-web-app-capable" content = "yes">
+	<link rel = "apple-touch-icon" href = "IOS-Icon.png">
+        <style>
+            body {
+                margin: 0px;
+                display: flex;
+		font-family: Impact;
+		font-size: 20px;
+            }
+            canvas {
+                color: white;
+                background-color: white;
+                padding-left: 0;
+                padding-right: 0;
+                margin-left: 0;
+                margin-right: 0;
+                cursor: none;
+                height: 800px;
+                width: 800px;
+            }
+            #instructions {
+                margin-left: 100;
+                margin-right: 100;
+            }
+	    a {
+      	    	border-style: solid;
+		text-decoration: none;
+		color: black;
+		margin-top: 50px;
+		margin-bottom: 50px;
+	    }
+	    @font-face {
+		font-family: Impact;
+		src: url(impact.ttf);
+	    }
+        </style>
+	    <meta name="description" content="Portal Jump is a game about Portals and Jumping">
+	    <meta name="keywords" content="Portal, Jump, Game">
+	    <meta name="author" content="Carter Semrad">
+    </head>
+    <body>
+        <canvas id="gameCanvas" width="800" height="800" style="border:1px solid #000000;"></canvas>
+        <div id="instructions">
+            <h1>Directions</h1>
+            <p>
+		<ul>
+                	<li>Use WASD to move</li>
+                	<li>Space to portal</li>
+			<li>A portal will be created in the opposite direction you are moving</li>
+			<li>(Eg: while holding A and space a portal will be made on the right)</li>
+			<li>Use the mouse to aim and click to shoot</li>
+			<li>Hold the right arrow to skip the tutorial</li>
+			<li>Purple obstacles can be shot, but red obstacles can not</li>
+			<li>New mechanics and checkpoints are unlocked every 50 points</li>
+			<li>Press L to start the game over instantly</li>
+			<li>Press P to pause</li>
+            	</ul>
+		<a href = "SaveCodePage.html">Save Code</a>
+		<br><br><br>
+		<a href = "playerSheet2.html">Skin Select</a>
+		<br><br><br>
+		<a href = "ContactPage.html">Suggestions/Submissions</a>
+		<br><br><br>
+            </p>
+        </div>
+        <script>
+	if (screen.width <= 699) {
+		document.location = "mobile.html";
+	}
+	</script>
+	<script src = "main.js"></script>
+    </body>
+</html>
