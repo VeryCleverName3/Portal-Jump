@@ -519,11 +519,12 @@ antiCheat();
                 ctx.fillStyle = "black";
                 if (blackOut)
                     ctx.fillStyle = "white";
+		ctx.textAlign = "start";
                 ctx.fillText("Score: " + score, 20, 30);
 		if(screen.width <= 699){
 			ctx.fillStyle = "lightgrey";
-			ctx.fillRect(60, 40, 20, 50);
-			ctx.fillRect(100, 40, 20, 50);
+			ctx.fillRect(720, 40, 20, 50);
+			ctx.fillRect(660, 40, 20, 50);
 		}
                 drawMouse();
                 localStorage.highscore = highscore;
