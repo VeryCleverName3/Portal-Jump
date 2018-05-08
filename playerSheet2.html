@@ -68,7 +68,7 @@
 			skins[15][0] = "robot.png";
 			skins[15][1] = "Submitted by Carter";
 			for(var i = 0; i < skins.length; i++){
-				if(i % 3 == 0 || i + 1 == skins.length){
+				if(i % 3 == 0){
 					if(typeof(tempGroup) != "undefined") document.body.appendChild(tempGroup);
 					tempGroup = document.createElement("div");
 					tempGroup.classList.add("group");
@@ -76,10 +76,19 @@
 				var tempFigure = document.createElement("figure");
 				tempFigure.innerHTML = '<img src = "' + skins[i][0] + '" onclick = "setSkin(this.src)"> <figcaption>' + skins[i][1] + '</figcaption>';
 				tempGroup.appendChild(tempFigure);
+				if(i + 1 == skins.length) document.body.appendChild(tempGroup);
 			}
 			function setSkin(skinName){
 				localStorage.playerImage = skinName;
 			}
+			setInterval(function(){
+				var images = document.getElementsByTagName("img");
+				for(var i = 0; i < images.length; i++){
+					if(images[i].src == localStorage.playerImage){
+						images[i].style.border = "thick solid #0000FF";
+					}
+				}
+			}, 1);
 		</script>
 	</body>
 </html>
