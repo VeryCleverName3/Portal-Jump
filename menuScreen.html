@@ -15,21 +15,31 @@
 			figure {
 				margin: auto;
 			}
+			#playButton{
+				text-decoration: none;
+				border-style: solid;
+				color: white;
+				background: black;
+				font-size: 100px;
+			}
 			a{
 				text-decoration: none;
 				border-style: solid;
 				color: white;
 				background: black;
-				font-size: 30px;
+				font-size: 70px;
 			}
 			h1{
-				font-size: 40px;
+				font-size: 200px;
 			}
 		</style>
 	</head>
 	<body>
 		<h1>Portal Jump!</h1>
-		<a href = "index.html">&nbsp;Play!&nbsp;</a>
+		<a  id = "playButton" href = "game.html">&nbsp;Play!&nbsp;</a>
+		<a href = "playerSheet2.html">&nbsp;Skin Select!&nbsp;</a>
+		<a href = "SaveCodePage.html">&nbsp;Save Code&nbsp;</a>
+		<a href = "ContactPage.html">&nbsp;Suggestions/Submissions&nbsp;</a>
 		<script>
 			if(screen.width <= 699) document.location = "mobile.html";
 		</script>
