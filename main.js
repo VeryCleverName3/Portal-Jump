@@ -524,7 +524,7 @@ antiCheat();
 		if(screen.width <= 699){
 			ctx.fillStyle = "lightgrey";
 			ctx.fillRect(720, 40, 20, 50);
-			ctx.fillRect(660, 40, 20, 50);
+			ctx.fillRect(680, 40, 20, 50);
 		}
                 drawMouse();
                 localStorage.highscore = highscore;
