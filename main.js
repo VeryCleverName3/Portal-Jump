@@ -216,6 +216,18 @@ antiCheat();
 				keyDown[39] = true;
 				keyDown[37] = false;
 			}
+			if(e.touches[i].clientY <= 100 && e.touches[i].clientX >= 700){
+				if(paused){
+					paused = false;
+					loop = setInterval(draw, 1000 / 60);
+				} else {
+					paused = true;
+					clearInterval(loop);
+					ctx.font = "55px Impact";
+					ctx.textAlign = "center";
+					ctx.fillText("Paused", 400, 400);
+				}
+			}
 		}
 		mouseX = e.touches[0].clientX;
                 mouseY = e.touches[0].clientY;
@@ -508,6 +520,11 @@ antiCheat();
                 if (blackOut)
                     ctx.fillStyle = "white";
                 ctx.fillText("Score: " + score, 20, 30);
+		if(screen.width <= 699){
+			ctx.fillStyle = "lightgrey";
+			ctx.fillRect(60, 40, 20, 50);
+			ctx.fillRect(100, 40, 20, 50);
+		}
                 drawMouse();
                 localStorage.highscore = highscore;
                 if (score > highscore) {
