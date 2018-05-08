@@ -64,10 +64,6 @@ antiCheat();
 	    var hasWon = false;
 	    var playerImage = new Image();
 	    playerImage.src = "" + localStorage.playerImage;
-	    if(localStorage.playerImage.length >= 20){
-		playerImage.height = 50;
-		playerImage.width = 50;
-	    }
 	    if(localStorage.highscore >= 350){
 		hasWon = true;    
 	    }
