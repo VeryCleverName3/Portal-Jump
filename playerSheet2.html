@@ -23,6 +23,7 @@
 	<body>
 		<h1>Skin Select</h1>
 		<script>
+			var tempGroup;
 			var skins = [];
 			for(var i = 0; i <= 15; i++){
 				skins[i] = [];
@@ -60,13 +61,14 @@
 			skins[15][0] = "robot.png";
 			skins[15][1] = "Submitted by Carter";
 			for(var i = 0; i < skins.length; i++){
-				if(i % 3 == 0){
-					if(i != 0) document.body.innerHTML += "</div>";
-					if(i != 15)document.body.innerHTML += "<div class = 'group'>";
+				if(i % 3 == 0 || i + 1 == skins.length){
+					if(typeof(tempGroup) != "undefined") document.body.appendChild(tempGroup);
+					tempGroup = document.createElement("div");
+					tempGroup.class = "group";
 				}
 				var tempFigure = document.createElement("figure");
 				tempFigure.innerHTML = '<img src = "' + skins[i][0] + '" onclick = "setSkin(this.src)"> <figcaption>' + skins[i][1] + '</figcaption>';
-				document.body.appendChild(tempFigure);
+				tempGroup.appendChild(tempFigure);
 			}
 			function setSkin(skinName){
 				localStorage.playerImage = skinName;
