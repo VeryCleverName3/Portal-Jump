@@ -1,2 +1,37 @@
 <html>
+	<head>
+		<style>
+			@font-face{
+				font-family: Impact;
+				src: url(impact.ttf);
+			}
+			html{
+				font-family: Impact;
+				font-size: 20px;
+				text-align: center;
+				margin: auto;
+				display: block;
+			}
+			figure {
+				margin: auto;
+			}
+			a{
+				text-decoration: none;
+				border-style: solid;
+				color: white;
+				background: black;
+				font-size: 30px;
+			}
+			h1{
+				font-size: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Portal Jump!</h1>
+		<a href = "index.html">&nbsp;Play!&nbsp;</a>
+		<script>
+			if(screen.width <= 699) document.location = "mobile.html";
+		</script>
+	</body>
 </html>
