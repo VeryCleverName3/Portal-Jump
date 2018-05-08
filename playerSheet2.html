@@ -1,2 +1,65 @@
 <html>
+	<head>
+		<style>
+			@font-face{
+				font-family: Impact;
+				src: url(impact.ttf);
+			}
+			html{
+				font-family: Impact;
+				font-size: 20px;
+				text-align: center;
+				margin: auto;
+			}
+			figure {
+				margin: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Skin Select</h1>
+		<script>
+			var skins = [];
+			skins[0][0] = "ninja.png";
+			skins[0][1] = "Submitted by Quinn";
+			skins[1][0] = "knight.png";
+			skins[1][1] = "Submitted by Quinn";
+			skins[2][0] = "romeSoldier.png";
+			skins[2][1] = "Submitted by Quinn";
+			skins[3][0] = "wizard.png";
+			skins[3][1] = "Submitted by Quinn";
+			skins[4][0] = "pumpkin.png";
+			skins[4][1] = "Submitted by Quinn";
+			skins[5][0] = "angel1.png";
+			skins[5][1] = "Submitted by Quinn";
+			skins[6][0] = "angel2.png";
+			skins[6][1] = "Submitted by Quinn";
+			skins[7][0] = "monster.png";
+			skins[7][1] = "Submitted by Quinn";
+			skins[8][0] = "demon.png";
+			skins[8][1] = "Submitted by Quinn";
+			skins[9][0] = "burger.png";
+			skins[9][1] = "Submitted by Wesley";
+			skins[10][0] = "spiderman.png";
+			skins[10][1] = "Submitted by Wesley";
+			skins[11][0] = "vbuck.png";
+			skins[11][1] = "Submitted by Diogo";
+			skins[12][0] = "pigDevil.png";
+			skins[12][1] = "Submitted by Quinn";
+			skins[13][0] = "animu.png";
+			skins[13][1] = "Submitted by Quinn";
+			skins[14][0] = "minion.png";
+			skins[14][1] = "Submitted by Quinn";
+			skins[15][0] = "robot.png";
+			skins[15][1] = "Submitted by Carter";
+			for(var i = 0; i < skins.length; i++){
+				var tempFigure = document.createElement("figure");
+				tempFigure.innerHTML = '<img src = "' + skins[i][0] + '" onclick = "setSkin(this.src)"> <figcaption>' + skins[i][1] + '</figcaption>';
+				document.body.appendChild(tempFigure);
+			}
+			function setSkin(skinName){
+				localStorage.playerImage = skinName;
+			}
+		</script>
+	</body>
 </html>
