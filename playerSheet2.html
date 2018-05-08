@@ -10,9 +10,13 @@
 				font-size: 20px;
 				text-align: center;
 				margin: auto;
+				display: block;
 			}
 			figure {
 				margin: 100px;
+			}
+			.group {
+				display: flex;
 			}
 		</style>
 	</head>
@@ -56,6 +60,10 @@
 			skins[15][0] = "robot.png";
 			skins[15][1] = "Submitted by Carter";
 			for(var i = 0; i < skins.length; i++){
+				if(i % 3 == 0){
+					if(i != 0) document.body.innerHTML += "</div>";
+					if(i != 15)document.body.innerHTML += "<div class = 'group'>";
+				}
 				var tempFigure = document.createElement("figure");
 				tempFigure.innerHTML = '<img src = "' + skins[i][0] + '" onclick = "setSkin(this.src)"> <figcaption>' + skins[i][1] + '</figcaption>';
 				document.body.appendChild(tempFigure);
