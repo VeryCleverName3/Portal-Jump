@@ -64,7 +64,7 @@
 				if(i % 3 == 0 || i + 1 == skins.length){
 					if(typeof(tempGroup) != "undefined") document.body.appendChild(tempGroup);
 					tempGroup = document.createElement("div");
-					tempGroup.class = "group";
+					tempGroup.classList.add("group");
 				}
 				var tempFigure = document.createElement("figure");
 				tempFigure.innerHTML = '<img src = "' + skins[i][0] + '" onclick = "setSkin(this.src)"> <figcaption>' + skins[i][1] + '</figcaption>';
