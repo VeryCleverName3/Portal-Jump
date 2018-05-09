@@ -91,7 +91,7 @@
 				var images = document.getElementsByTagName("img");
 				for(var i = 0; i < images.length; i++){
 					if(images[i].src == localStorage.playerImage){
-						images[i].style.border = "thick solid";
+						document.getElementsByTagName("figure")[i].style.border = "thick solid";
 					} else images[i].style.border = "none";
 				}
 			}, 1);
