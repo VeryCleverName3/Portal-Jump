@@ -64,6 +64,10 @@ antiCheat();
 	    var hasWon = false;
 	    var playerImage = new Image();
 	    playerImage.src = "" + localStorage.playerImage;
+	    if(playerImage.src.substring(0, 23) != "https://veryclevername3"){
+		    playerImage.height = 50;
+		    playerImage.width = 50;
+	    }
 	    if(localStorage.highscore >= 350){
 		hasWon = true;    
 	    }
