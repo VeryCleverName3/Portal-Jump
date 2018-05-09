@@ -34,6 +34,8 @@
 		<a href = "index.html">Back</a>
 		<h1>Skin Select</h1>
 		Just click the one you want to use.
+		<br>
+		<br>
 		<a href = "PlayerSheet.html">Custom Skins</a>
 		<script>
 			var tempGroup;
@@ -92,7 +94,7 @@
 				for(var i = 0; i < images.length; i++){
 					if(images[i].src == localStorage.playerImage){
 						document.getElementsByTagName("figure")[i].style.border = "thick solid";
-					} else images[i].style.border = "none";
+					} else document.getElementsByTagName("figure")[i].style.border = "none";
 				}
 			}, 1);
 		</script>
