@@ -38,6 +38,14 @@
 		font-family: Impact;
 		src: url(impact.ttf);
 	    }
+	    #skinBox {
+		border-style: solid;
+		font-size: 20px;
+	    }
+	    #fullSkinBox {
+		font-size: 50px;
+		border-style: solid;
+	    }
         </style>
 	    <meta name="description" content="Portal Jump is a game about Portals and Jumping">
 	    <meta name="keywords" content="Portal, Jump, Game">
@@ -61,7 +69,12 @@
 			<li>Press P to pause</li>
             	</ul>
 		<br>
-		<a href = "playerSheet2.html">&nbsp;Skin Select&nbsp;</a>
+		<div id = "fullSkinBox"> 
+			<span onclick = "changeSkinLeft">\<</span>
+			<div id = "skinBox"></div>
+			<span onclick = "changeSkinRight">\></span>
+		</div>
+		<a href = "playerSheet2.html">&nbsp;All Skins&nbsp;</a>
 		<br><br><br>
 		<a href = "SaveCodePage.html">&nbsp;Save Code&nbsp;</a>
 		<br><br><br>
@@ -74,5 +87,85 @@
 	}
 	</script>
 	<script src = "main.js"></script>
+	<script>
+		var skins = [];
+		for(var i = 0; i <= 20; i++){
+			skins[i] = [];
+		}
+		skins[0][0] = "ninja.png";
+		skins[0][1] = "Submitted by Quinn";
+		skins[1][0] = "knight.png";
+		skins[1][1] = "Submitted by Quinn";
+		skins[2][0] = "romeSoldier.png";
+		skins[2][1] = "Submitted by Quinn";
+		skins[3][0] = "wizard.png";
+		skins[3][1] = "Submitted by Quinn";
+		skins[4][0] = "pumpkin.png";
+		skins[4][1] = "Submitted by Quinn";
+		skins[5][0] = "angel1.png";
+		skins[5][1] = "Submitted by Quinn";
+		skins[6][0] = "angel2.png";
+		skins[6][1] = "Submitted by Quinn";
+		skins[7][0] = "monster.png";
+		skins[7][1] = "Submitted by Quinn";
+		skins[8][0] = "demon.png";
+		skins[8][1] = "Submitted by Quinn";
+		skins[9][0] = "burger.png";
+		skins[9][1] = "Submitted by Wesley";
+		skins[10][0] = "spiderman.png";
+		skins[10][1] = "Submitted by Wesley";
+		skins[11][0] = "vbuck.png";
+		skins[11][1] = "Submitted by Diogo";
+		skins[12][0] = "pigDevil.png";
+		skins[12][1] = "Submitted by Quinn";
+		skins[13][0] = "animu.png";
+		skins[13][1] = "Submitted by Quinn";
+		skins[14][0] = "minion.png";
+		skins[14][1] = "Submitted by Quinn";
+		skins[15][0] = "robot.png";
+		skins[15][1] = "Submitted by Carter";
+		skins[16][0] = "furvius.jpg";
+		skins[16][1] = "Submitted by Jacob L";
+		skins[17][0] = "supremeMeme.png";
+		skins[17][1] = "Submitted by Tyler";
+		skins[18][0] = "stars.png";
+		skins[18][1] = "Submitted by Wesley";
+		skins[19][0] = "sky.png";
+		skins[19][1] = "Submitted by Wesley";
+		skins[20][0] = "windows.png";
+		skins[20][1] = "Submitted by Ethan J";
+		var img = document.createElement("img");
+		var images = [];
+		var currentImage;
+		for(var i = 0; i <= 20; i++){
+			images[i] = document.createElement("img");
+		}
+		img.src = localStorage.playerImage;
+		setInterval(function(){
+			for(var i = 0; i <= 20; i++){
+				if(images[i].src == localStorage.playerImage){
+					img.src = images[i].src;
+					currentImage = i;
+					var skinSelectBox = document.getElementById("skinBox");
+					skinSelectBox.innerHTML = img;
+					skinSelectBox.innerText += skins[i][1];
+				}
+			}
+		}, 1000 / 60);
+		function changeSkinLeft(){
+			if(currentImage > 0){
+				currentSkin -= 1;
+				localStorage.playerImage = skins[currentImage][0];
+				document.location = "index.html";
+			}
+		}
+		function changeSkinRight(){
+			if(currentImage < 20){
+				currentSkin += 1;
+				localStorage.playerImage = skins[currentImage][0];
+				document.location = "index.html";
+			}
+		}
+	</script>
     </body>
 </html>
