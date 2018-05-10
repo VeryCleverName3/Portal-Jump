@@ -143,14 +143,14 @@
 		var currentImage;
 		function changeSkinLeft(){
 			if(currentImage > 0){
-				currentSkin -= 1;
+				currentImage -= 1;
 				localStorage.playerImage = skins[currentImage][0];
 				document.location = "index.html";
 			}
 		}
 		function changeSkinRight(){
 			if(currentImage < 20){
-				currentSkin += 1;
+				currentImage += 1;
 				localStorage.playerImage = skins[currentImage][0];
 				document.location = "index.html";
 			}
