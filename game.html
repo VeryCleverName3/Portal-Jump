@@ -90,10 +90,13 @@
 	</script>
 	<script src = "main.js"></script>
 	<script>
+		//Create skins array
 		var skins = [];
+		//Populate array with arrays
 		for(var i = 0; i <= 20; i++){
 			skins[i] = [];
 		}
+		//Populate the array's arrays
 		skins[0][0] = "ninja.png";
 		skins[0][1] = "Submitted by Quinn";
 		skins[1][0] = "knight.png";
@@ -136,24 +139,52 @@
 		skins[19][1] = "Submitted by Wesley";
 		skins[20][0] = "windows.png";
 		skins[20][1] = "Submitted by Ethan J";
+		//Creates image element
 		var img = document.createElement("img");
+		//Sets image
 		img.src = localStorage.playerImage;
+		//Gets box
 		var skinSelectBox = document.getElementById("skinBox");
+		//Add image
 		skinSelectBox.appendChild(img);
+		//initialize current image number
 		var currentImage;
-		function changeSkinLeft(){
-			if(currentImage > 0){
-				currentSkin -= 1;
-				localStorage.playerImage = skins[currentImage][0];
-				document.location = "index.html";
+		//Linear search
+		for (i = 0; i < skins.length; i++){
+			if (localstorage.playerImage == skins[i][0]){
+			    	currentImage = i;
+				break;
 			}
 		}
-		function changeSkinRight(){
-			if(currentImage < 20){
-				currentSkin += 1;
-				localStorage.playerImage = skins[currentImage][0];
-				document.location = "index.html";
+		function changeSkinLeft(){
+			//If you can switch directly, switch
+			if(currentImage > 0){
+				//move image
+				currentImage -= 1;
 			}
+			else {
+				//Wrap around
+				currentImage = 20;
+			}
+			//Set image
+			localStorage.playerImage = skins[currentImage][0];
+			//Reload page
+			document.location = "index.html";
+		}
+		function changeSkinRight(){
+			
+			if(currentImage < 20){
+				//Move image
+				currentImage += 1;
+			}
+			else {
+				//Wrap around
+				currentImage = 0;
+			}
+			//Set image
+			localStorage.playerImage = skins[currentImage][0];
+			//Reload page
+			document.location = "index.html";
 		}
 	</script>
     </body>
