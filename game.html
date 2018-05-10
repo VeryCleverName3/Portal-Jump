@@ -45,6 +45,7 @@
 	    #fullSkinBox {
 		font-size: 50px;
 		border-style: solid;
+		display: flex;
 	    }
         </style>
 	    <meta name="description" content="Portal Jump is a game about Portals and Jumping">
@@ -70,9 +71,9 @@
             	</ul>
 		<br>
 		<div id = "fullSkinBox"> 
-			<span onclick = "changeSkinLeft">\<</span>
+			<span onclick = "changeSkinLeft"> < </span>
 			<div id = "skinBox"></div>
-			<span onclick = "changeSkinRight">\></span>
+			<span onclick = "changeSkinRight"> > </span>
 		</div>
 		<a href = "playerSheet2.html">&nbsp;All Skins&nbsp;</a>
 		<br><br><br>
@@ -135,23 +136,10 @@
 		skins[20][0] = "windows.png";
 		skins[20][1] = "Submitted by Ethan J";
 		var img = document.createElement("img");
-		var images = [];
-		var currentImage;
-		for(var i = 0; i <= 20; i++){
-			images[i] = document.createElement("img");
-		}
 		img.src = localStorage.playerImage;
-		setInterval(function(){
-			for(var i = 0; i <= 20; i++){
-				if(images[i].src == localStorage.playerImage){
-					img.src = images[i].src;
-					currentImage = i;
-					var skinSelectBox = document.getElementById("skinBox");
-					skinSelectBox.innerHTML = img;
-					skinSelectBox.innerText += skins[i][1];
-				}
-			}
-		}, 1000 / 60);
+		var skinSelectBox = document.getElementById("skinBox");
+		skinSelectBox.appendChild(img);
+		var currentImage;
 		function changeSkinLeft(){
 			if(currentImage > 0){
 				currentSkin -= 1;
