@@ -36,10 +36,14 @@
 			
 		</div>
 		<script>
+			//Sets the pass variable to the save code ID
 			var pass = document.getElementById("pwd");
+			//Sets the pass inner text
 			pass.innerText = (localStorage.highscore * 367423786);
 			setInterval(function(){
+				//sets highscore to pass inner text
 				localStorage.highscore = pass.innerText / 367423786;
+				//Checks for cheating
 				if(localStorage.highscore != Math.floor(localStorage.highscore)) localStorage.highscore = 0;
 			}, 1);
 		</script>

@@ -39,10 +39,13 @@
 		<a href = "PlayerSheet.html">Custom Skins</a>
 		<script>
 			var tempGroup;
+			//Initialize array
 			var skins = [];
+			//Populate array of arrays
 			for(var i = 0; i <= 20; i++){
 				skins[i] = [];
 			}
+			//Populate array with arrays
 			skins[0][0] = "ninja.png";
 			skins[0][1] = "Submitted by Quinn";
 			skins[1][0] = "knight.png";
@@ -85,22 +88,36 @@
 			skins[19][1] = "Submitted by Wesley";
 			skins[20][0] = "windows.png";
 			skins[20][1] = "Submitted by Ethan J";
+			//Draw all images
 			for(var i = 0; i < skins.length; i++){
+				//Split images in groups of 3
 				if(i % 3 == 0){
+					//If it already exists, write it before you overwrite the var
 					if(typeof(tempGroup) != "undefined") document.body.appendChild(tempGroup);
+					//Set a new div
 					tempGroup = document.createElement("div");
+					//Sets it to group class
 					tempGroup.classList.add("group");
 				}
+				//Creates a temporary figure
 				var tempFigure = document.createElement("figure");
+				//Sets the image and caption
 				tempFigure.innerHTML = '<img src = "' + skins[i][0] + '" onclick = "setSkin(this.src)"> <figcaption>' + skins[i][1] + '</figcaption>';
+				//Writes it to the Div
 				tempGroup.appendChild(tempFigure);
+				//If it is at the end it writes it
 				if(i + 1 == skins.length) document.body.appendChild(tempGroup);
 			}
+			//Sets skin
 			function setSkin(skinName){
+				//Sets skin
 				localStorage.playerImage = skinName;
 			}
+			//Draws a border on selected image
 			setInterval(function(){
+				//Get images
 				var images = document.getElementsByTagName("img");
+				//Draw border
 				for(var i = 0; i < images.length; i++){
 					if(images[i].src == localStorage.playerImage){
 						document.getElementsByTagName("figure")[i].style.border = "thick solid";

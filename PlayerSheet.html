@@ -112,8 +112,11 @@
 			
 		</div>
 		<script>
+			//Gets the skin input box
 			var skinBox = document.getElementById("skinBox");
+			//Sets the inner text to current image
 			skinBox.innerText = "" + localStorage.playerImage;
+			//constantly checks for new image
 			setInterval(function(){localStorage.playerImage = skinBox.innerText}, 1);
 		</script>
 	</body>
