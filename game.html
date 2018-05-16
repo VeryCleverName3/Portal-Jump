@@ -30,9 +30,8 @@
             }
 	    a {
       	    	border-style: solid;
-		background-color: black;
 		text-decoration: none;
-		color: white;
+		color: black;
 		margin-top: 50px;
 		margin-bottom: 50px;
 	    }
@@ -55,6 +54,16 @@
 	    .arrow {
 		cursor: pointer;    
 	    }
+	    #buttons {
+		    background-color: white;
+		    border-style: solid;
+		    padding: 50px;
+	    }
+	    #directions {
+		    background-color: white;
+		    border-style: solid;
+		    padding: 50px;
+	    }
         </style>
 	    <meta name="description" content="Portal Jump is a game about Portals and Jumping">
 	    <meta name="keywords" content="Portal, Jump, Game">
@@ -63,6 +72,7 @@
     <body>
         <canvas id="gameCanvas" width="800" height="800" style="border:1px solid #000000;"></canvas>
         <div id="instructions">
+	    <div id = "directions">
             <h1>Directions</h1>
             <p>
 		<ul>
@@ -77,6 +87,7 @@
 			<li>Press L to start the game over instantly</li>
 			<li>Press P to pause</li>
             	</ul>
+	    </div>
 		<br>
 		<div id = "fullSkinBox"> 
 			<div class = "arrow" onclick = "changeSkinLeft()"> < </div>
@@ -84,11 +95,13 @@
 			<div class = "arrow" onclick = "changeSkinRight()"> > </div>
 		</div>
 		<br>
-		<a href = "playerSheet2.html">&nbsp;All Skins&nbsp;</a>
-		<br><br>
-		<a href = "SaveCodePage.html">&nbsp;Save Code&nbsp;</a>
-		<br><br>
-		<a href = "ContactPage.html">&nbsp;Suggestions/Submissions&nbsp;</a>
+		<div id = "buttons">
+			<a href = "playerSheet2.html">&nbsp;All Skins&nbsp;</a>
+			<br><br>
+			<a href = "SaveCodePage.html">&nbsp;Save Code&nbsp;</a>
+			<br><br>
+			<a href = "ContactPage.html">&nbsp;Suggestions/Submissions&nbsp;</a>
+		</div>
             </p>
         </div>
         <script>
