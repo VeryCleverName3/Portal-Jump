@@ -51,6 +51,9 @@
 		background-color: white;
 		width: 300px;
 	    }
+	    .arrow {
+		cursor: se-resize;    
+	    }
         </style>
 	    <meta name="description" content="Portal Jump is a game about Portals and Jumping">
 	    <meta name="keywords" content="Portal, Jump, Game">
@@ -75,9 +78,9 @@
             	</ul>
 		<br>
 		<div id = "fullSkinBox"> 
-			<div onclick = "changeSkinLeft()"> < </div>
+			<div class = "arrow" onclick = "changeSkinLeft()"> < </div>
 			<div id = "skinBox"></div>
-			<div onclick = "changeSkinRight()"> > </div>
+			<div class = "arrow" onclick = "changeSkinRight()"> > </div>
 		</div>
 		<br>
 		<a href = "playerSheet2.html">&nbsp;All Skins&nbsp;</a>
