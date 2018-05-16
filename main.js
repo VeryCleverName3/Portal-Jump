@@ -1906,27 +1906,6 @@ antiCheat();
 						impossible = true;
 					}
 				}
-				if(stage >= 3){
-					tempRand3 = Math.floor(Math.random() * 5) + 1;
-					while((tempRand3 == tempRand) || (tempRand3 == tempRand2)) {
-						tempRand3 = Math.floor(Math.random() * 5) + 1;
-					}
-					if(tempRand3 == 1){
-						antiGrav = true;
-					}
-					if(tempRand3 == 2){
-						blackOut = true;
-					}
-					if(tempRand3 == 3){
-						metaGame = true;
-					}
-					if(tempRand3 == 4){
-						phaseShift = true;
-					}
-					if(tempRand3 == 5){
-						impossible = true;
-					}
-				}
 				stage++;
 			}, 10000);
 		}
