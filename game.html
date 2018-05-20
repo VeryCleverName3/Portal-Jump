@@ -110,7 +110,7 @@
 		//Create skins array
 		var skins = [];
 		//Populate array with arrays
-		for(var i = 0; i <= 21; i++){
+		for(var i = 0; i <= 23; i++){
 			skins[i] = [];
 		}
 		//Populate the array's arrays
@@ -158,6 +158,10 @@
 		skins[20][1] = "Submitted by Ethan J";
 		skins[21][0] = "cyborg.png";
 		skins[21][1] = "Submitted by Colin";
+		skins[22][0] = "diamond.png";
+		skins[22][1] = "Submitted by Wesley";
+		skins[23][0] = "smile.png";
+		skins[23][1] = "Submitted by Wesley";
 		//Creates image element
 		var img = document.createElement("img");
 		//Sets image
@@ -183,7 +187,7 @@
 			}
 			else {
 				//Wrap around
-				currentImage = 21;
+				currentImage = 23;
 			}
 			//Set image
 			localStorage.playerImage = skins[currentImage][0];
@@ -192,7 +196,7 @@
 		}
 		function changeSkinRight(){
 			
-			if(currentImage < 21){
+			if(currentImage < 23){
 				//Move image
 				currentImage += 1;
 			}
