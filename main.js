@@ -1885,7 +1885,7 @@ antiCheat();
 						impossible = true;
 					}
 				}
-				if(stage >= 2){
+				if(stage >= 4){
 					tempRand2 = Math.floor(Math.random() * 5) + 1;
 					while(tempRand2 == tempRand) {
 						tempRand2 = Math.floor(Math.random() * 5) + 1;
