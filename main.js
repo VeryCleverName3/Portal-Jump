@@ -754,7 +754,7 @@ antiCheat();
             function onGround() {
                 if (phase == 1) {
                     if (y >= obstacleDraw[10] - 25 && y <= obstacleDraw[10] + 25) {
-                        y = obstacleDraw[10] - 25;
+                        y = obstacleDraw[10] - 30;
                         if (antiGrav) {
                             velocityY = 0;
                         } else
@@ -795,7 +795,7 @@ antiCheat();
                 }
                 if (phase == 2) {
                     if (y >= obstacleDraw2[10] - 25 && y <= obstacleDraw2[10] + 25) {
-                        y = obstacleDraw2[10] - 25;
+                        y = obstacleDraw2[10] - 30;
                         if (antiGrav) {
                             velocityY = 0;
                         } else
