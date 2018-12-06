@@ -483,7 +483,7 @@ antiCheat();
                 }
 		bossManager();
                 ctx.fillStyle = "black";
-		if(hasWon && localStorage.playerImage.length <= 1){
+		if(hasWon && localStorage.playerImage.length <= 1 && localStorage.pwd != "CorrectHorseBatteryStaple"){
 			ctx.fillStyle = ctx.strokeStyle;
 			ctx.drawImage(winPlayer, x - 25, y - 25);
 			ctx.strokeStyle = "black";
