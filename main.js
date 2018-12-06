@@ -327,16 +327,16 @@ antiCheat();
                 ctx.fillStyle = "black";
 		if(!hasWon){
 			ctx.drawImage(playerImage, x - (playerImage.width / 2), y - (playerImage.height / 2), playerImage.width, playerImage.height);
-			if(localStorage.pwd == "CorrectHorseBatteryStaple"){
-				var grd = ctx.createLinearGradient(0, 0, 0, 600);
-				grd.addColorStop(0, "red");
-				grd.addColorStop(1/4, "orange");
-				grd.addColorStop(2/4, "yellow");
-				grd.addColorStop(3/4, "green");
-				grd.addColorStop(1, "blue");
-				ctx.fillStyle = grd;
-			}
                  if(!hasWon && (localStorage.playerImage.length <= 1)) ctx.fillRect(x - 25, y - 25, 50, 50);
+		}
+		if(localStorage.pwd == "CorrectHorseBatteryStaple"){
+			var grd = ctx.createLinearGradient(0, 0, 0, 600);
+			grd.addColorStop(0, "red");
+			grd.addColorStop(1/4, "orange");
+			grd.addColorStop(2/4, "yellow");
+			grd.addColorStop(3/4, "green");
+			grd.addColorStop(1, "blue");
+			ctx.fillStyle = grd;
 		}
 		ctx.fillStyle = "lightgray";
 		ctx.fillRect(50, 400, 200, 100);
