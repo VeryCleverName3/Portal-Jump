@@ -148,7 +148,9 @@ antiCheat();
 		} else keyDown[83] = false;
             }
 	    ontouchend = function(e){
+		console.log("here1");
 		if(e.touches.length == 0){
+			console.log("here2");
 			keyDown[68] = false;
 			keyDown[65] = false;
 			keyDown[87] = false;
