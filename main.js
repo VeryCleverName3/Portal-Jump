@@ -150,16 +150,10 @@ antiCheat();
 	    ontouchend = function(e){
 		mouseX = e.touches[0].clientX;
 		mouseY = e.touches[0].clientY;
-		if(e.touches[0].clientX >= 250 && e.touches[0].clientX <= 400 && e.touches[0].clientY >= 800){
+		if(e.touches.length == 0){
 			keyDown[68] = false;
-		}
-		if(e.touches[0].clientX <= 150 && e.touches[0].clientY >= 800){
 			keyDown[65] = false;
-		}
-		if(e.touches[0].clientY <= 1025 && e.touches[0].clientY >= 800 && e.touches[0].clientX <= 400){
 			keyDown[87] = false;
-		}
-		if(e.touches[0].clientY >= 1125 && e.touches[0].clientX <= 400){
 			keyDown[83] = false;
 		}
 	    }
