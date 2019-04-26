@@ -127,7 +127,7 @@ antiCheat();
 			keyDown[83] = true;
 		} else keyDown[83] = false;
             }
-	    ontouchup = function(e){
+	    ontouchend = function(e){
 		    if(e.touches.length == 0){
 			    keyDown[68] = false;
 			    keyDown[65] = false;
