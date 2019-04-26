@@ -1,4 +1,6 @@
 var keyDown = [];
+var mouseX;
+var mouseY;
 ontouchstart = function(e) {
 	mouseX = e.touches[0].clientX;
 	mouseY = e.touches[0].clientY;
@@ -65,8 +67,8 @@ antiCheat();
             var ctx = c.getContext("2d");
             var x = 400;
             var y = 250;
-            var mouseX;
-            var mouseY;
+            mouseX;
+            mouseY;
             keyDown = [];
             var mouseDown = [];
             var velocityY = 0;
