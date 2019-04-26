@@ -1,3 +1,4 @@
+var keyDown = [];
 ontouchstart = function(e) {
 	mouseX = e.touches[0].clientX;
 	mouseY = e.touches[0].clientY;
@@ -66,7 +67,7 @@ antiCheat();
             var y = 250;
             var mouseX;
             var mouseY;
-            var keyDown = [];
+            keyDown = [];
             var mouseDown = [];
             var velocityY = 0;
             var portalDirection = [];
