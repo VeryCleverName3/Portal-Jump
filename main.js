@@ -148,8 +148,6 @@ antiCheat();
 		} else keyDown[83] = false;
             }
 	    ontouchend = function(e){
-		mouseX = e.touches[0].clientX;
-		mouseY = e.touches[0].clientY;
 		if(e.touches.length == 0){
 			keyDown[68] = false;
 			keyDown[65] = false;
