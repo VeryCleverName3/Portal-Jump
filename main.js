@@ -127,6 +127,14 @@ antiCheat();
 			keyDown[83] = true;
 		} else keyDown[83] = false;
             }
+	    ontouchup = function(e){
+		    if(e.touches.length == 0){
+			    keyDown[68] = false;
+			    keyDown[65] = false;
+			    keyDown[87] = false;
+			    keyDown[83] = false;
+		    }
+	    }
             document.addEventListener("mousedown", function(e) {
                 mouseDown[e.which] = true;
 		if(gameOver){
