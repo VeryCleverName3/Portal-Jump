@@ -64,7 +64,7 @@ function antiCheat() {
 			localStorage.highscore = highscore;
 		}
 	}, 1);
-	document.body.style.zoom = window.innerHeight / 800;	
+	if(window.location.href != "https://veryclevername3.github.io/Portal-Jump/mobile.html") document.body.style.zoom = window.innerHeight / 800;	
 	var c = document.getElementById("gameCanvas");
 	var winPlayer = new Image();
 	winPlayer.src = "winPlayer.png";
