@@ -64,9 +64,7 @@ function antiCheat() {
 			localStorage.highscore = highscore;
 		}
 	}, 1);
-	if(!localStorage.mobile){
-		document.body.style.zoom = window.innerHeight / 800;	
-	}
+	document.body.style.zoom = window.innerHeight / 800;	
 	var c = document.getElementById("gameCanvas");
 	var winPlayer = new Image();
 	winPlayer.src = "winPlayer.png";
